@@ -12,6 +12,22 @@
       rel="stylesheet"
     />
     <style>
+      /* VALIDATE FORM */
+.form input.input-error,
+.form select.input-error,
+.form textarea.input-error {
+  border-color: #d92d20;
+  box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.12);
+  background: #fffafa;
+}
+
+.field-error {
+  margin: -6px 0 2px;
+  color: #d92d20;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
       :root {
         --primary: #08366f;
         --primary-2: #0b56b3;
@@ -358,13 +374,6 @@
       .form {
         display: grid;
         gap: 12px;
-      }
-        .field-error {
-        margin: -6px 0 2px;
-        color: #d92d20;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1.35;
       }
 
       .form input,
@@ -1224,7 +1233,7 @@
         background: #06162e;
         color: #fff;
         padding: 10px 12px 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.14);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
       }
 
       .mobile-offer-title {
@@ -1255,7 +1264,7 @@
         border-radius: 2px;
         padding: 6px 4px 5px;
         min-width: 44px;
-        box-shadow: inset 0 -2px 0 rgba(8,54,111,0.08);
+        box-shadow: inset 0 -2px 0 rgba(8, 54, 111, 0.08);
       }
 
       .mobile-timebox strong {
@@ -1298,18 +1307,25 @@
         font-size: 13px;
         font-weight: 900;
         text-transform: uppercase;
-        box-shadow: 0 5px 0 #b50e18, 0 10px 18px rgba(225,29,46,0.28);
+        box-shadow:
+          0 5px 0 #b50e18,
+          0 10px 18px rgba(225, 29, 46, 0.28);
         animation: mobileCtaPulse 1.4s ease-in-out infinite;
       }
 
       @keyframes mobileCtaPulse {
-        0%, 100% {
+        0%,
+        100% {
           transform: scale(1);
-          box-shadow: 0 5px 0 #b50e18, 0 10px 18px rgba(225,29,46,0.28);
+          box-shadow:
+            0 5px 0 #b50e18,
+            0 10px 18px rgba(225, 29, 46, 0.28);
         }
         50% {
           transform: scale(1.04);
-          box-shadow: 0 5px 0 #b50e18, 0 12px 24px rgba(225,29,46,0.45);
+          box-shadow:
+            0 5px 0 #b50e18,
+            0 12px 24px rgba(225, 29, 46, 0.45);
         }
       }
 
@@ -1375,7 +1391,6 @@
           padding: 7px 9px;
         }
       }
-
     </style>
   </head>
   <body>
@@ -1515,7 +1530,7 @@
                 <strong id="seconds">00</strong><small>Giây</small>
               </div>
             </div>
-     <form class="form" id="leadForm" novalidate>
+            <form class="form" id="leadForm" novalidate>
               <input
                 type="text"
                 name="hoTen"
@@ -1532,7 +1547,7 @@
                 maxlength="12"
                 required
               />
-               <select name="loaiCongTrinh" required>
+              <select name="loaiCongTrinh" required>
                 <option value="">Loại công trình</option>
                 <option>Nhà phố</option>
                 <option>Biệt thự</option>
@@ -1540,7 +1555,7 @@
                 <option>Văn phòng/cửa hàng</option>
                 <option>Khác</option>
               </select>
-               <select name="nhuCau" required>
+              <select name="nhuCau" required>
                 <option value="">Nhu cầu của bạn</option>
                 <option>Tư vấn lắp mới</option>
                 <option>Cải tạo hố thang</option>
@@ -1845,11 +1860,10 @@
         <div class="container">
           <div class="section-title">
             <div class="tag">Dự án & uy tín</div>
-            <h2>
-              Một số công trình đã tư vấn và phản hồi từ khách hàng
-            </h2>
+            <h2>Một số công trình đã tư vấn và phản hồi từ khách hàng</h2>
             <p>
-              Đây là những công trình tiêu biểu trong những mà chúng tôi đã tư vấn.
+              Đây là những công trình tiêu biểu trong những mà chúng tôi đã tư
+              vấn.
             </p>
           </div>
           <div class="grid-3">
@@ -2073,9 +2087,12 @@
               </p>
             </details>
             <details>
-              <summary>Tôi chưa có bản vẽ thang máy có thể tư vấn cho tôi không ?</summary>
+              <summary>
+                Tôi chưa có bản vẽ thang máy có thể tư vấn cho tôi không ?
+              </summary>
               <p>
-                Có. Bạn có thể gửi mặt bằng, số tầng và nhu cầu sử dụng để được tư vấn sơ bộ trước khi có bản vẽ chi tiết.
+                Có. Bạn có thể gửi mặt bằng, số tầng và nhu cầu sử dụng để được
+                tư vấn sơ bộ trước khi có bản vẽ chi tiết.
               </p>
             </details>
           </div>
@@ -2094,7 +2111,8 @@
       <a href="tel:0963087385">Gọi ngay</a>
       <a href="#dang-ky">Đăng ký</a>
     </div>
-  <script>
+
+    <script>
       const deadline = new Date();
       deadline.setDate(deadline.getDate() + 3);
 
@@ -2106,11 +2124,20 @@
         const now = new Date().getTime();
         const distance = deadline.getTime() - now;
 
+        function setCountdownText(id, value) {
+          const element = document.getElementById(id);
+          if (element) element.textContent = value;
+        }
+
         if (distance <= 0) {
-          document.getElementById("days").textContent = "00";
-          document.getElementById("hours").textContent = "00";
-          document.getElementById("minutes").textContent = "00";
-          document.getElementById("seconds").textContent = "00";
+          setCountdownText("days", "00");
+          setCountdownText("hours", "00");
+          setCountdownText("minutes", "00");
+          setCountdownText("seconds", "00");
+          setCountdownText("promoDays", "00");
+          setCountdownText("promoHours", "00");
+          setCountdownText("promoMinutes", "00");
+          setCountdownText("promoSeconds", "00");
           return;
         }
 
@@ -2119,10 +2146,15 @@
         const minutes = Math.floor((distance / (1000 * 60)) % 60);
         const seconds = Math.floor((distance / 1000) % 60);
 
-        document.getElementById("days").textContent = pad(days);
-        document.getElementById("hours").textContent = pad(hours);
-        document.getElementById("minutes").textContent = pad(minutes);
-        document.getElementById("seconds").textContent = pad(seconds);
+        setCountdownText("days", pad(days));
+        setCountdownText("hours", pad(hours));
+        setCountdownText("minutes", pad(minutes));
+        setCountdownText("seconds", pad(seconds));
+
+        setCountdownText("promoDays", pad(days));
+        setCountdownText("promoHours", pad(hours));
+        setCountdownText("promoMinutes", pad(minutes));
+        setCountdownText("promoSeconds", pad(seconds));
       }
 
       updateCountdown();
@@ -2132,136 +2164,134 @@
         "https://script.google.com/macros/s/AKfycbzLdYzwtkCo4lsjNWnMUJCvEZPCvQ4pepbnnFTYsbdvVfIf3-0ivpT1xjcWvmkHNfjj/exec";
 
       function clearFormErrors(form) {
-        form.querySelectorAll(".input-error").forEach(function (field) {
-          field.classList.remove("input-error");
-        });
+  form.querySelectorAll(".input-error").forEach(function (field) {
+    field.classList.remove("input-error");
+  });
 
-        form.querySelectorAll(".field-error").forEach(function (message) {
-          message.remove();
-        });
-      }
+  form.querySelectorAll(".field-error").forEach(function (message) {
+    message.remove();
+  });
+}
 
-      function showFieldError(field, message) {
-        field.classList.add("input-error");
+function showFieldError(field, message) {
+  field.classList.add("input-error");
 
-        const error = document.createElement("div");
-        error.className = "field-error";
-        error.textContent = message;
+  const error = document.createElement("div");
+  error.className = "field-error";
+  error.textContent = message;
 
-        field.insertAdjacentElement("afterend", error);
-      }
+  field.insertAdjacentElement("afterend", error);
+}
 
-      function normalizePhone(phone) {
-        return phone.replace(/[\s.-]/g, "");
-      }
+function normalizePhone(phone) {
+  return phone.replace(/[\s.-]/g, "");
+}
 
-      function isValidVietnamPhone(phone) {
-        const value = normalizePhone(phone);
+function isValidVietnamPhone(phone) {
+  const value = normalizePhone(phone);
 
-        // Chấp nhận: 0963087385 hoặc +84963087385
-        return /^(0[0-9]{9}|\+84[0-9]{9})$/.test(value);
-      }
+  // Hợp lệ: 0963087385 hoặc +84963087385
+  return /^(0(3|5|7|8|9)[0-9]{8}|\+84(3|5|7|8|9)[0-9]{8})$/.test(value);
+}
 
-      function validateLeadForm(form) {
-        clearFormErrors(form);
+function validateLeadForm(form) {
+  clearFormErrors(form);
 
-        let isValid = true;
+  let isValid = true;
 
-        const hoTen = form.querySelector('[name="hoTen"]');
-        const soDienThoai = form.querySelector('[name="soDienThoai"]');
-        const loaiCongTrinh = form.querySelector('[name="loaiCongTrinh"]');
-        const nhuCau = form.querySelector('[name="nhuCau"]');
+  const hoTen = form.querySelector('[name="hoTen"]');
+  const soDienThoai = form.querySelector('[name="soDienThoai"]');
+  const loaiCongTrinh = form.querySelector('[name="loaiCongTrinh"]');
+  const nhuCau = form.querySelector('[name="nhuCau"]');
 
-        if (!hoTen.value.trim()) {
-          showFieldError(hoTen, "Vui lòng nhập họ và tên.");
-          isValid = false;
-        }
+  if (!hoTen.value.trim()) {
+    showFieldError(hoTen, "Vui lòng nhập họ và tên.");
+    isValid = false;
+  }
 
-        if (!soDienThoai.value.trim()) {
-          showFieldError(soDienThoai, "Vui lòng nhập số điện thoại/Zalo.");
-          isValid = false;
-        } else if (!isValidVietnamPhone(soDienThoai.value)) {
-          showFieldError(
-            soDienThoai,
-            "Số điện thoại chưa đúng. Ví dụ: 0963087385 hoặc +84963087385."
-          );
-          isValid = false;
-        }
+  if (!soDienThoai.value.trim()) {
+    showFieldError(soDienThoai, "Vui lòng nhập số điện thoại/Zalo.");
+    isValid = false;
+  } else if (!isValidVietnamPhone(soDienThoai.value)) {
+    showFieldError(
+      soDienThoai,
+      "Số điện thoại chưa đúng. Ví dụ: 0963087385 hoặc +84963087385."
+    );
+    isValid = false;
+  }
 
-        if (!loaiCongTrinh.value) {
-          showFieldError(loaiCongTrinh, "Vui lòng chọn loại công trình.");
-          isValid = false;
-        }
+  if (!loaiCongTrinh.value) {
+    showFieldError(loaiCongTrinh, "Vui lòng chọn loại công trình.");
+    isValid = false;
+  }
 
-        if (!nhuCau.value) {
-          showFieldError(nhuCau, "Vui lòng chọn nhu cầu của bạn.");
-          isValid = false;
-        }
+  if (!nhuCau.value) {
+    showFieldError(nhuCau, "Vui lòng chọn nhu cầu của bạn.");
+    isValid = false;
+  }
 
-        if (!isValid) {
-          const firstError = form.querySelector(".input-error");
-          if (firstError) {
-            firstError.scrollIntoView({ behavior: "smooth", block: "center" });
-            firstError.focus();
-          }
-        }
+  if (!isValid) {
+    const firstError = form.querySelector(".input-error");
+    if (firstError) {
+      firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+      firstError.focus();
+    }
+  }
 
-        return isValid;
-      }
+  return isValid;
+}
 
-      document
-        .getElementById("leadForm")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault();
+document
+  .getElementById("leadForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-          const form = event.target;
-          const submitButton = document.getElementById("submitButton");
-          const formStatus = document.getElementById("formStatus");
+    const form = event.target;
+    const submitButton = document.getElementById("submitButton");
+    const formStatus = document.getElementById("formStatus");
 
-          formStatus.textContent = "";
+    formStatus.textContent = "";
 
-          if (!validateLeadForm(form)) {
-            formStatus.style.color = "#d92d20";
-            formStatus.textContent =
-              "Vui lòng kiểm tra lại các thông tin bắt buộc.";
-            return;
-          }
+    if (!validateLeadForm(form)) {
+      formStatus.style.color = "#d92d20";
+      formStatus.textContent = "Vui lòng kiểm tra lại thông tin bắt buộc.";
+      return;
+    }
 
-          const formData = new FormData(form);
+    const formData = new FormData(form);
 
-          // Chuẩn hóa số điện thoại trước khi gửi về Google Sheet
-          formData.set(
-            "soDienThoai",
-            normalizePhone(form.querySelector('[name="soDienThoai"]').value)
-          );
+    formData.set(
+      "soDienThoai",
+      normalizePhone(form.querySelector('[name="soDienThoai"]').value)
+    );
 
-          formData.append("thoiGianGui", new Date().toLocaleString("vi-VN"));
-          formData.append("trangHienTai", window.location.href);
+    formData.append("thoiGianGui", new Date().toLocaleString("vi-VN"));
+    formData.append("trangHienTai", window.location.href);
 
-          submitButton.disabled = true;
-          submitButton.textContent = "Đang gửi thông tin...";
+    submitButton.disabled = true;
+    submitButton.textContent = "Đang gửi thông tin...";
 
-          try {
-            await fetch(GOOGLE_SHEET_WEB_APP_URL, {
-              method: "POST",
-              mode: "no-cors",
-              body: formData,
-            });
+    try {
+      await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
 
-            form.reset();
-            clearFormErrors(form);
-            formStatus.style.color = "#087443";
-            formStatus.textContent =
-              "Cảm ơn bạn! Phương Thang Máy sẽ liên hệ tư vấn sớm.";
-          } catch (error) {
-            formStatus.style.color = "#d92d20";
-            formStatus.textContent =
-              "Chưa gửi được thông tin. Vui lòng gọi/Zalo trực tiếp hoặc thử lại sau.";
-          } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = "Đăng ký tư vấn miễn phí";
-          }
-        });
+      form.reset();
+      clearFormErrors(form);
+      formStatus.style.color = "#087443";
+      formStatus.textContent =
+        "Cảm ơn bạn! Phương Thang Máy sẽ liên hệ tư vấn sớm.";
+    } catch (error) {
+      formStatus.style.color = "#d92d20";
+      formStatus.textContent =
+        "Chưa gửi được thông tin. Vui lòng gọi/Zalo trực tiếp hoặc thử lại sau.";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Đăng ký tư vấn miễn phí";
+    }
+  });
     </script>
   </body>
 </html>
