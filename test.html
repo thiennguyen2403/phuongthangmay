@@ -359,13 +359,6 @@
         display: grid;
         gap: 12px;
       }
-        .field-error {
-        margin: -6px 0 2px;
-        color: #d92d20;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1.35;
-      }
 
       .form input,
       .form select,
@@ -1218,197 +1211,33 @@
         color: rgba(255, 255, 255, 0.9);
       }
 
-      /* MOBILE STICKY COUNTDOWN BAR */
-      .mobile-offer-bar {
-        display: none;
-        background: #06162e;
-        color: #fff;
-        padding: 10px 12px 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.14);
+      /* VALIDATE FORM */
+      .form input.input-error,
+      .form select.input-error,
+      .form textarea.input-error {
+        border-color: #d92d20;
+        box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.12);
+        background: #fffafa;
       }
 
-      .mobile-offer-title {
-        text-align: center;
-        font-size: 14px;
-        font-weight: 900;
-        letter-spacing: 0.3px;
-        margin-bottom: 8px;
-      }
-
-      .mobile-offer-row {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .mobile-time-group {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 6px;
-      }
-
-      .mobile-timebox {
-        background: #fff;
-        color: #08366f;
-        text-align: center;
-        border-radius: 2px;
-        padding: 6px 4px 5px;
-        min-width: 44px;
-        box-shadow: inset 0 -2px 0 rgba(8,54,111,0.08);
-      }
-
-      .mobile-timebox strong {
-        display: block;
-        font-size: 22px;
-        line-height: 1;
-        font-weight: 900;
-        letter-spacing: 0.5px;
-      }
-
-      .mobile-timebox span {
-        display: block;
-        margin-top: 4px;
-        color: #06162e;
-        font-size: 10px;
-        font-weight: 800;
-      }
-
-      .mobile-offer-cta {
-        text-align: center;
-        min-width: 118px;
-      }
-
-      .mobile-discount {
-        color: #ffd34d;
-        font-size: 20px;
-        line-height: 1;
-        font-weight: 900;
-        letter-spacing: 1px;
-        margin-bottom: 6px;
-        text-transform: uppercase;
-      }
-
-      .mobile-offer-cta a {
-        display: block;
-        background: linear-gradient(180deg, #ff3434, #e11d2e);
-        color: #fff;
-        border-radius: 999px;
-        padding: 8px 12px;
+      .field-error {
+        margin: -6px 0 2px;
+        color: #d92d20;
         font-size: 13px;
-        font-weight: 900;
-        text-transform: uppercase;
-        box-shadow: 0 5px 0 #b50e18, 0 10px 18px rgba(225,29,46,0.28);
-        animation: mobileCtaPulse 1.4s ease-in-out infinite;
+        font-weight: 700;
+        line-height: 1.35;
       }
 
-      @keyframes mobileCtaPulse {
-        0%, 100% {
-          transform: scale(1);
-          box-shadow: 0 5px 0 #b50e18, 0 10px 18px rgba(225,29,46,0.28);
-        }
-        50% {
-          transform: scale(1.04);
-          box-shadow: 0 5px 0 #b50e18, 0 12px 24px rgba(225,29,46,0.45);
-        }
-      }
-
-      @media (max-width: 600px) {
-        .mobile-offer-bar {
-          display: block;
-          position: sticky;
-          top: 0;
-          z-index: 300;
-        }
-
-        /* Ẩn phần logo + nút đăng ký tư vấn trên điện thoại */
-        .topbar,
-        .nav {
-          display: none;
-        }
-
-        .hero {
-          padding-top: 30px;
-        }
-      }
-
-      @media (max-width: 380px) {
-        .mobile-offer-bar {
-          padding: 9px 8px 11px;
-        }
-
-        .mobile-offer-title {
-          font-size: 12px;
-        }
-
-        .mobile-offer-row {
-          gap: 7px;
-        }
-
-        .mobile-time-group {
-          gap: 4px;
-        }
-
-        .mobile-timebox {
-          min-width: 38px;
-          padding: 5px 3px 4px;
-        }
-
-        .mobile-timebox strong {
-          font-size: 19px;
-        }
-
-        .mobile-timebox span {
-          font-size: 9px;
-        }
-
-        .mobile-offer-cta {
-          min-width: 104px;
-        }
-
-        .mobile-discount {
-          font-size: 17px;
-        }
-
-        .mobile-offer-cta a {
-          font-size: 11px;
-          padding: 7px 9px;
-        }
+      .form input:focus,
+      .form select:focus,
+      .form textarea:focus {
+        border-color: var(--primary-2);
+        box-shadow: 0 0 0 3px rgba(11, 86, 179, 0.12);
       }
 
     </style>
   </head>
   <body>
-    <div class="mobile-offer-bar">
-      <div class="mobile-offer-title">THỜI GIAN NHẬN ƯU ĐÃI CHỈ CÒN:</div>
-
-      <div class="mobile-offer-row">
-        <div class="mobile-time-group">
-          <div class="mobile-timebox">
-            <strong id="promoDays">00</strong>
-            <span>Ngày</span>
-          </div>
-          <div class="mobile-timebox">
-            <strong id="promoHours">00</strong>
-            <span>Giờ</span>
-          </div>
-          <div class="mobile-timebox">
-            <strong id="promoMinutes">00</strong>
-            <span>Phút</span>
-          </div>
-          <div class="mobile-timebox">
-            <strong id="promoSeconds">00</strong>
-            <span>Giây</span>
-          </div>
-        </div>
-
-        <div class="mobile-offer-cta">
-          <div class="mobile-discount">ƯU ĐÃI 30%</div>
-          <a href="#dang-ky">ĐĂNG KÝ NGAY</a>
-        </div>
-      </div>
-    </div>
-
     <div class="topbar">
       <div class="container">
         <div>
@@ -1515,7 +1344,7 @@
                 <strong id="seconds">00</strong><small>Giây</small>
               </div>
             </div>
-     <form class="form" id="leadForm" novalidate>
+            <form class="form" id="leadForm" novalidate>
               <input
                 type="text"
                 name="hoTen"
@@ -1532,7 +1361,7 @@
                 maxlength="12"
                 required
               />
-               <select name="loaiCongTrinh" required>
+              <select name="loaiCongTrinh" required>
                 <option value="">Loại công trình</option>
                 <option>Nhà phố</option>
                 <option>Biệt thự</option>
@@ -1540,7 +1369,7 @@
                 <option>Văn phòng/cửa hàng</option>
                 <option>Khác</option>
               </select>
-               <select name="nhuCau" required>
+              <select name="nhuCau" required>
                 <option value="">Nhu cầu của bạn</option>
                 <option>Tư vấn lắp mới</option>
                 <option>Cải tạo hố thang</option>
@@ -1627,11 +1456,11 @@
           <div class="section-title">
             <div class="tag">Video thực tế</div>
             <h2>Video giúp khách hàng hiểu rõ trước khi lắp thang máy</h2>
-            <!-- <p>
+            <p>
               Thiết kế dạng card dọc trên điện thoại giống landing page mẫu: có
               thumbnail, tiêu đề nổi bật, chân dung/người tư vấn và câu trích
               dẫn bên dưới.
-            </p> -->
+            </p>
           </div>
 
           <div class="video-list">
@@ -1846,10 +1675,12 @@
           <div class="section-title">
             <div class="tag">Dự án & uy tín</div>
             <h2>
-              Một số công trình đã tư vấn và phản hồi từ khách hàng
+              Thêm bằng chứng để khách hàng tin bạn trước khi để lại số điện
+              thoại
             </h2>
             <p>
-              Đây là những công trình tiêu biểu trong những mà chúng tôi đã tư vấn.
+              Phần này nên thay bằng ảnh công trình thật, tên khu vực, số tầng
+              và nhận xét thật từ khách hàng.
             </p>
           </div>
           <div class="grid-3">
@@ -1914,18 +1745,18 @@
                 “Được giải thích rất dễ hiểu, biết rõ nhà mình cần chuẩn bị gì
                 trước khi làm hố thang.”
               </p>
-              <strong>MR.Tuấn - Chủ đầu tư nhà phố</strong>
+              <strong>Khách hàng nhà phố</strong>
             </div>
             <div class="testimonial">
               <p>“Báo giá rõ từng hạng mục, dễ so sánh giữa các phương án.”</p>
-              <strong>MR.Hùng - Chủ đầu tư biệt thự</strong>
+              <strong>Khách hàng biệt thự</strong>
             </div>
             <div class="testimonial">
               <p>
                 “Sau lắp đặt có hướng dẫn sử dụng và lịch bảo trì nên gia đình
                 yên tâm hơn.”
               </p>
-              <strong>MR.Tuấn - Chủ đầu tư gia đình</strong>
+              <strong>Khách hàng gia đình</strong>
             </div>
           </div>
         </div>
@@ -2094,7 +1925,8 @@
       <a href="tel:0963087385">Gọi ngay</a>
       <a href="#dang-ky">Đăng ký</a>
     </div>
-  <script>
+
+    <script>
       const deadline = new Date();
       deadline.setDate(deadline.getDate() + 3);
 
