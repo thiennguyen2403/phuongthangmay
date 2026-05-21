@@ -1,0 +1,2281 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Chuyên Gia Phương Thang Máy - Giải Pháp Kỹ Thuật Thang Máy Đỉnh Cao
+    </title>
+
+    <!-- Google Fonts: Phông chữ hiện đại, sang trọng -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons: Bộ thư viện icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      .tiktok-slide {
+        background: #f9f9f9;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: center;
+      }
+      .tiktok-container {
+        width: 260px;
+        height: 460px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 15px;
+      }
+      .tiktok-embed {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .swiper-pagination {
+        bottom: -1px !important; /* Dịch chuyển vị trí nút tròn xuống dưới */
+      }
+
+      /* Tạo khoảng trống phía dưới cùng của cả box để không bị dính vào phần sau */
+      .mySwiper {
+        padding-bottom: 40px !important;
+      }
+      /* ==========================================================================
+           1. CẤU HÌNH BIẾN MÀU SẮC & CÀI ĐẶT CHUNG (PREMIUM GRADIENT)
+           ========================================================================== */
+      :root {
+        --primary-color: #0052cc;
+        --primary-dark: #003399;
+        --accent-color: #00d2ff;
+        --text-dark: #0f172a;
+        --text-light: #475569;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Nút bấm hiệu ứng Glow chuyên nghiệp */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 14px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        cursor: pointer;
+        border: none;
+        font-size: 15px;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-dark)
+        );
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 82, 204, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 82, 204, 0.5);
+      }
+
+      .btn-outline {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+      }
+
+      .btn-outline:hover {
+        background: white;
+        color: var(--primary-dark);
+        border-color: white;
+        transform: translateY(-3px);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+        font-weight: 800;
+        color: var(--text-dark);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 10px;
+      }
+
+      .section-title p {
+        color: var(--text-light);
+        margin-top: 12px;
+        font-size: 16px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 6px 16px;
+        background: rgba(0, 82, 204, 0.08);
+        color: var(--primary-color);
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* ==========================================================================
+           2. THANH MENU ĐIỀU HƯỚNG (HEADER GLASSMORPHISM)
+           ========================================================================== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        z-index: 1000;
+        transition: var(--transition-smooth);
+        padding: 22px 0;
+      }
+
+      header.scrolled {
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        padding: 14px 0;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: var(--transition-smooth);
+      }
+
+      header.scrolled .logo {
+        color: var(--primary-color);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 500;
+        transition: var(--transition-smooth);
+        font-size: 15px;
+      }
+
+      header.scrolled .nav-links a {
+        color: var(--text-dark);
+      }
+
+      .nav-links a:hover,
+      header.scrolled .nav-links a:hover {
+        color: var(--accent-color);
+      }
+
+      header.scrolled .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 22px;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      header.scrolled .menu-toggle {
+        color: var(--text-dark);
+      }
+
+      /* ==========================================================================
+           3. BANNER: PREMIUM SLIDER & FLOATING CARD
+           ========================================================================== */
+      .hero {
+        min-height: 95vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 120px 0 70px 0;
+        overflow: hidden;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 17, 32, 0.98) 30%,
+          rgba(0, 51, 153, 0.8) 100%
+        );
+        z-index: -1;
+      }
+
+      .hero .container {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .hero-content h1 {
+        font-size: 52px;
+        font-weight: 800;
+        line-height: 1.25;
+        margin-bottom: 22px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero-content h1 span {
+        background: linear-gradient(to right, var(--accent-color), #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-content p {
+        font-size: 17px;
+        color: #cbd5e1;
+        margin-bottom: 35px;
+        line-height: 1.7;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .hero-mini-stats {
+        display: flex;
+        gap: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 25px;
+      }
+
+      .mini-stat h4 {
+        font-size: 28px;
+        color: var(--accent-color);
+        font-weight: 800;
+      }
+
+      .mini-stat p {
+        font-size: 13px;
+        color: #94a3b8;
+      }
+
+      /* --- BANNER SLIDER PHÍA PHẢI --- */
+      .hero-avatar-side {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .avatar-glow-effect {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 210, 255, 0.25) 0%,
+          transparent 70%
+        );
+        z-index: 1;
+      }
+
+      .banner-slider-container {
+        position: relative;
+        width: 390px;
+        height: 490px;
+        border-radius: 28px;
+        overflow: hidden;
+        z-index: 2;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+        border: 2px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .banner-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1.2s ease-in-out;
+      }
+
+      .banner-slide.active {
+        opacity: 1;
+      }
+
+      .banner-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .floating-info-card {
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.96),
+          rgba(30, 41, 59, 0.96)
+        );
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        padding: 14px 26px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        z-index: 3;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        white-space: nowrap;
+      }
+
+      .floating-info-card i {
+        width: 38px;
+        height: 38px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: white;
+      }
+
+      /* ==========================================================================
+           4. GIỚI THIỆU BẢN THÂN SÂU SẮC (ABOUT SECTION)
+           ========================================================================== */
+      .about-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about-img {
+        position: relative;
+      }
+
+      .about-img-frame {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+        position: relative;
+        z-index: 2;
+      }
+
+      .about-img img {
+        width: 100%;
+        height: 490px;
+        object-fit: cover;
+      }
+
+      .about-img::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 4px solid var(--primary-color);
+        top: 20px;
+        left: -20px;
+        border-radius: 24px;
+        z-index: 1;
+      }
+
+      .about-info h3 {
+        font-size: 32px;
+        color: var(--text-dark);
+        margin-bottom: 22px;
+        font-weight: 800;
+        line-height: 1.35;
+      }
+
+      .about-info p {
+        color: var(--text-light);
+        margin-bottom: 16px;
+        font-size: 15.5px;
+        text-align: justify;
+      }
+
+      .experience-highlight {
+        background: linear-gradient(
+          to right,
+          rgba(0, 82, 204, 0.05),
+          transparent
+        );
+        border-left: 5px solid var(--primary-color);
+        padding: 20px;
+        margin: 28px 0;
+        border-radius: 0 16px 16px 0;
+      }
+
+      .experience-highlight h4 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--primary-dark);
+      }
+
+      /* Lưới căn chỉnh các thông số vào GIỮA */
+      .stats-grid-center {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 480px;
+        margin: 32px auto 0 auto;
+      }
+
+      .stat-item {
+        background: var(--bg-white);
+        padding: 24px 20px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 82, 204, 0.03);
+        border: 1px solid rgba(0, 82, 204, 0.06);
+        text-align: center;
+        transition: var(--transition-smooth);
+      }
+
+      .stat-item:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      .stat-item h4 {
+        font-size: 34px;
+        color: var(--primary-color);
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+
+      .stat-item p {
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-light);
+      }
+
+      /* ==========================================================================
+           5. QUY TRÌNH HÀNH ĐỘNG 5 BƯỚC MỚI CỦA ANH PHƯƠNG
+           ========================================================================== */
+      .workflow-section {
+        background-color: var(--bg-white);
+      }
+
+      .workflow-grid-5steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 20px;
+      }
+
+      .workflow-card {
+        background-color: var(--bg-light);
+        padding: 35px 22px;
+        border-radius: 20px;
+        transition: var(--transition-smooth);
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        position: relative;
+      }
+
+      .workflow-step-num {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 38px;
+        font-weight: 900;
+        color: rgba(0, 82, 204, 0.05);
+        transition: var(--transition-smooth);
+      }
+
+      .workflow-icon {
+        width: 55px;
+        height: 55px;
+        background-color: rgba(0, 82, 204, 0.06);
+        color: var(--primary-color);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+        transition: var(--transition-smooth);
+      }
+
+      .workflow-card h3 {
+        font-size: 17.5px;
+        margin-bottom: 12px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .workflow-card p {
+        color: var(--text-light);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .workflow-card:hover {
+        transform: translateY(-8px);
+        background-color: var(--bg-white);
+        box-shadow: 0 15px 30px rgba(0, 82, 204, 0.1);
+        border-color: rgba(0, 82, 204, 0.1);
+      }
+
+      .workflow-card:hover .workflow-icon {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      /* ==========================================================================
+           6. KHO THƯ VIỆN VIDEO TÁCH BIỆT (YOUTUBE & TIKTOK)
+           ========================================================================== */
+      .video-section {
+        background: linear-gradient(180deg, var(--bg-light) 0%, #edf2f7 100%);
+      }
+
+      .media-platform-box {
+        background: var(--bg-white);
+        border-radius: 28px;
+        padding: 35px;
+        margin-bottom: 45px;
+        box-shadow: 0 15px 40px rgba(15, 23, 42, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+
+      .platform-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .platform-header i {
+        font-size: 32px;
+      }
+      .platform-header h3 {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text-dark);
+      }
+
+      .youtube-grid-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+      }
+
+      .tiktok-grid-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+
+      .video-item-wrapper {
+        background: var(--bg-light);
+        border-radius: 20px;
+        padding: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        transition: var(--transition-smooth);
+      }
+
+      .video-item-wrapper:hover {
+        transform: translateY(-5px);
+        background: var(--bg-white);
+        box-shadow: 0 12px 30px rgba(0, 82, 204, 0.08);
+        border-color: rgba(0, 82, 204, 0.12);
+      }
+
+      .video-frame-youtube {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        border-radius: 14px;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .video-frame-youtube iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .video-frame-tiktok {
+        position: relative;
+        width: 100%;
+        padding-bottom: 177.77%;
+        border-radius: 14px;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .video-frame-tiktok iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .video-title-text {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-top: 14px;
+        padding: 0 4px 6px 4px;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* ==========================================================================
+           7. NGUYÊN TẮC LÀM NGHỀ (ADVANTAGES SECTION)
+           ========================================================================== */
+      .advantages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+
+      .adv-card {
+        background: var(--bg-white);
+        padding: 35px 25px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.01);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        transition: var(--transition-smooth);
+      }
+
+      .adv-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 82, 204, 0.15);
+      }
+
+      .adv-icon {
+        font-size: 36px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+      .adv-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      /* ==========================================================================
+           8. PHẦN DỰ ÁN TIÊU BIỂU (GALLERY BLOCK)
+           ========================================================================== */
+      .gallery {
+        background: var(--bg-white);
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+        height: 310px;
+        cursor: pointer;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition-smooth);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(15, 23, 42, 0.95),
+          rgba(15, 23, 42, 0.2)
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px;
+        opacity: 0;
+        transition: var(--transition-smooth);
+      }
+
+      .gallery-overlay h4 {
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        transform: translateY(15px);
+        transition: var(--transition-smooth);
+      }
+      .gallery-overlay p {
+        color: var(--accent-color);
+        font-size: 14px;
+        margin-top: 4px;
+        transform: translateY(15px);
+        transition: var(--transition-smooth);
+      }
+
+      .click-hint {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transform: translateY(15px);
+        transition: var(--transition-smooth);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+      .gallery-item:hover .gallery-overlay h4,
+      .gallery-item:hover .gallery-overlay p,
+      .gallery-item:hover .click-hint {
+        transform: translateY(0);
+      }
+
+      /* Cửa sổ bật lên chi tiết (Modal) */
+      .project-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(8px);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      .project-modal.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .modal-content {
+        background: var(--bg-white);
+        width: 100%;
+        max-width: 760px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        position: relative;
+        transform: scale(0.95);
+        transition: all 0.3s ease;
+      }
+
+      .project-modal.open .modal-content {
+        transform: scale(1);
+      }
+      .modal-close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        background: rgba(15, 23, 42, 0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+        transition: var(--transition-smooth);
+      }
+
+      .modal-close-btn:hover {
+        background: #ef4444;
+        transform: rotate(90deg);
+      }
+      .modal-body img {
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+      }
+      .modal-info-padding {
+        padding: 30px;
+      }
+      .modal-info-padding h3 {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+
+      .modal-tag {
+        display: inline-block;
+        padding: 4px 10px;
+        background: rgba(0, 82, 204, 0.08);
+        color: var(--primary-color);
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 6px;
+        margin-bottom: 15px;
+      }
+
+      /* ==========================================================================
+           9. LIÊN HỆ & MẠNG XÃ HỘI (CONTACT BLOCK)
+           ========================================================================== */
+      .contact-box {
+        background: linear-gradient(135deg, #0b1329, #1c2541);
+        border-radius: 24px;
+        padding: 50px;
+        color: white;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .contact-info-side h3 {
+        font-size: 32px;
+        margin-bottom: 15px;
+        font-weight: 800;
+      }
+      .contact-info-side p {
+        color: #94a3b8;
+        margin-bottom: 35px;
+        font-size: 15.5px;
+      }
+      .contact-channels {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-btn-link {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 16px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+        font-size: 17px;
+        transition: var(--transition-smooth);
+      }
+
+      .contact-btn-link.phone {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+      }
+      .contact-btn-link.zalo {
+        background: linear-gradient(135deg, #0068ff, #0056d6);
+      }
+      .contact-btn-link:hover {
+        transform: translateX(6px);
+        filter: brightness(1.1);
+      }
+
+      .social-media-block h4 {
+        font-size: 15px;
+        margin-bottom: 15px;
+        color: #94a3b8;
+      }
+      .social-icons-row {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-icon-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .social-icon-circle.facebook:hover {
+        background-color: #1877f2;
+        transform: translateY(-4px);
+      }
+      .social-icon-circle.tiktok:hover {
+        background-color: #010101;
+        transform: translateY(-4px);
+      }
+      .social-icon-circle.youtube:hover {
+        background-color: #ff0000;
+        transform: translateY(-4px);
+      }
+
+      .contact-brand-statement {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .contact-brand-statement i {
+        font-size: 50px;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+      }
+      .contact-brand-statement h4 {
+        font-size: 22px;
+        margin-bottom: 12px;
+        font-weight: 800;
+      }
+
+      /* Scroll Reveal (Hiệu ứng động cuộn trang) */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      footer {
+        background-color: #0b1329;
+        color: #475569;
+        text-align: center;
+        padding: 25px 0;
+        font-size: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.02);
+      }
+
+      /* Xử lý hiển thị responsive */
+      @media (max-width: 992px) {
+        section {
+          padding: 50px 0;
+        }
+        .hero {
+          padding: 120px 0 50px 0;
+          min-height: auto;
+        }
+        .hero .container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+        .hero-content h1 {
+          font-size: 38px;
+        }
+        .hero-btns {
+          justify-content: center;
+        }
+        .hero-mini-stats {
+          justify-content: center;
+        }
+        .banner-slider-container {
+          width: 330px;
+          height: 430px;
+        }
+        .about-wrapper {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .about-img img {
+          height: 380px;
+        }
+        .contact-box {
+          grid-template-columns: 1fr;
+          padding: 35px 20px;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: #0f172a;
+          flex-direction: column;
+          padding: 30px 0;
+          gap: 20px;
+          display: none;
+        }
+        .nav-links.active {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==========================================
+         THANH MENU ĐIỀU HƯỚNG (HEADER) - ĐÃ BỎ CHỮ PHƯƠNG THANG MÁY
+         ========================================== -->
+    <header id="main-header">
+      <div class="container">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-elevator"></i>
+        </a>
+        <div class="menu-toggle" id="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#">Trang đầu</a></li>
+          <li><a href="#about">Về tôi</a></li>
+          <li><a href="#workflow">Cách tôi làm việc</a></li>
+          <li><a href="#videos">Kênh thực chiến</a></li>
+          <li><a href="#advantages">Tiêu chuẩn kỹ thuật</a></li>
+          <li><a href="#gallery">Công trình thực tế</a></li>
+          <li>
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              style="color: white; padding: 8px 20px; font-size: 13px"
+              >Liên hệ</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ==========================================
+         BANNER ĐỈNH CAO - ĐÃ ĐỔI BADGE THƯƠNG HIỆU
+         ========================================== -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <!-- Đã cập nhật dòng chữ badge theo ý anh -->
+          <span
+            class="badge"
+            style="
+              background: rgba(0, 210, 255, 0.15);
+              color: #00d2ff;
+              text-transform: none;
+            "
+            >Phương Thang Máy - Cựu Kỹ Sư Hãng Hitachi</span
+          >
+          <h1>Chuyên Gia Giải Pháp<br /><span>Thang Máy Cao Cấp</span></h1>
+          <p>
+            Tôi là Phương — Với 8 năm kinh nghiệm thực chiến tại hãng Hitachi,
+            tôi trực tiếp tư vấn kỹ thuật, đo đạc thông thủy và "may đo" những
+            hệ thống thang máy tinh xảo, an toàn tuyệt đối cho biệt thự và nhà
+            phố.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#contact" class="btn btn-primary"
+              ><i class="fa-solid fa-phone-volume"></i> Gọi tư vấn trực tiếp từ
+              tôi</a
+            >
+            <a href="#gallery" class="btn btn-outline"
+              >Xem công trình thực tế</a
+            >
+          </div>
+
+          <div class="hero-mini-stats">
+            <div class="mini-stat">
+              <h4>8+ Năm</h4>
+              <p>Kinh nghiệm chuyên sâu</p>
+            </div>
+            <div class="mini-stat">
+              <h4>100+</h4>
+              <p>Công trình bàn giao</p>
+            </div>
+            <div class="mini-stat">
+              <h4>100%</h4>
+              <p>Trực tiếp giám sát</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-avatar-side">
+          <div class="avatar-glow-effect"></div>
+
+          <div class="banner-slider-container">
+            <div class="banner-slide active">
+              <img src="./imgaes/1.jpg" alt="Chuyên gia Trần Văn Phương" />
+            </div>
+            <div class="banner-slide">
+              <img src="./imgaes/2.jpg" alt="Công trình thang máy kính" />
+            </div>
+            <div class="banner-slide">
+              <img src="./imgaes/3.jpg" alt="Kiểm tra lắp đặt cơ khí" />
+            </div>
+          </div>
+
+          <div class="floating-info-card">
+            <i class="fa-solid fa-user-check"></i>
+            <div>
+              <strong
+                style="
+                  color: white;
+                  display: block;
+                  font-size: 14px;
+                  line-height: 1.2;
+                "
+                >Trần Văn Phương</strong
+              >
+              <span
+                style="
+                  color: var(--accent-color);
+                  font-size: 11px;
+                  font-weight: 600;
+                "
+                >Cam kết chất lượng chuẩn Nhật</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PHẦN GIỚI THIỆU - ĐÃ CĂN GIỮA KHỐI THÔNG SỐ
+         ========================================== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-wrapper">
+          <div class="about-img reveal">
+            <div class="about-img-frame">
+              <img
+                src="./imgaes/4.jpg"
+                alt="Chuyên gia Phương Thang Máy tại công trình"
+              />
+            </div>
+          </div>
+          <div class="about-info reveal">
+            <span class="badge">Cam kết trong công việc</span>
+            <h3>
+              Tôi là Phương — Tư vấn và thi công thang máy an toàn cho ngôi nhà
+              của bạn.
+            </h3>
+            <p>
+              Tôi tin rằng một chiếc thang máy vận hành hoàn hảo không phụ thuộc
+              hoàn toàn vào thiết bị đắt tiền, mà mấu chốt nằm ở **trình độ hình
+              học không gian khi đo đạc, sự chính xác đến từng milimet cơ khí và
+              sơ đồ mạch điện** của người thợ lắp ráp.
+            </p>
+
+            <div class="experience-highlight">
+              <h4>
+                <i
+                  class="fa-solid fa-award"
+                  style="color: var(--primary-color); margin-right: 6px"
+                ></i>
+                Kinh Nghiệm Thực Chiến 8 Năm Chuẩn Nhật Bản
+              </h4>
+              <p
+                style="
+                  margin-bottom: 0;
+                  font-size: 14.5px;
+                  color: var(--text-dark);
+                "
+              >
+                Quãng thời gian dài làm việc tại môi trường khắt khe của Hitachi
+                đã rèn luyện cho tôi tư duy kỷ luật tuyệt đối của người Nhật.
+                Tôi thấu hiểu tường tận cấu trúc kỹ thuật lõi, cách vận hành
+                mạch điện thông minh và kỹ thuật căn chỉnh ray dẫn hướng chống
+                rung lắc tối đa.
+              </p>
+            </div>
+
+            <!-- ĐÃ CẬP NHẬT: Căn giữa hoàn chỉnh khối thông số nổi bật -->
+            <div class="stats-grid-center">
+              <div class="stat-item">
+                <h4>8+ Năm</h4>
+                <p style="margin-left: 30px">Kỹ Sư Hãng Hitachi</p>
+              </div>
+              <div class="stat-item">
+                <h4>100+</h4>
+                <p style="margin-left: 30px">Gia Đình Tin Tưởng</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PHẦN QUY TRÌNH - ĐÃ CẬP NHẬT CHUẨN 5 BƯỚC MỚI
+         ========================================== -->
+    <section class="workflow-section" id="workflow">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Cách Tôi Trực Tiếp Làm Việc</h2>
+          <p>
+            Tôi đồng hành cùng quý khách qua 5 giai đoạn kỹ thuật cốt lõi để đảm
+            bảo công trình hoàn hảo
+          </p>
+        </div>
+
+        <div class="workflow-grid-5steps">
+          <!-- Bước 1 -->
+          <div class="workflow-card reveal">
+            <div class="workflow-step-num">01</div>
+            <div class="workflow-icon">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h3>Khảo Sát Tư Vấn</h3>
+            <p>
+              Tôi trực tiếp tới công trình để kiểm tra hố thang, đo đạc kích
+              thước thông thủy thực tế và đưa ra phương án bố trí mặt bằng chuẩn
+              nhất.
+            </p>
+          </div>
+
+          <!-- Bước 2 -->
+          <div class="workflow-card reveal">
+            <div class="workflow-step-num">02</div>
+            <div class="workflow-icon">
+              <i class="fa-solid fa-bars-progress"></i>
+            </div>
+            <h3>Theo Dõi Tiến Độ Công Trình</h3>
+            <p>
+              Giám sát chặt chẽ tiến trình xây dựng giếng thang, đảm bảo các đội
+              thợ nề đổ dầm bệ đúng kỹ thuật và không bị sai lệch tim trục.
+            </p>
+          </div>
+
+          <!-- Bước 3 -->
+          <div class="workflow-card reveal">
+            <div class="workflow-step-num">03</div>
+            <div class="workflow-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Giám Sát Các Giai Đoạn</h3>
+            <p>
+              Trực tiếp có mặt kiểm định nghiêm ngặt khâu lắp đặt phần cứng cơ
+              khí, căn chỉnh ray dẫn hướng và đấu nối tủ điều khiển điện tử.
+            </p>
+          </div>
+
+          <!-- Bước 4 -->
+          <div class="workflow-card reveal">
+            <div class="workflow-step-num">04</div>
+            <div class="workflow-icon"><i class="fa-solid fa-key"></i></div>
+            <h3>Bàn Giao Thang Máy</h3>
+            <p>
+              Thực hiện kiểm thử tải trọng, chạy ép hành trình liên tục đạt
+              chứng nhận an toàn tối cao trước khi chính thức bàn giao chìa khóa
+              cho chủ nhà.
+            </p>
+          </div>
+
+          <!-- Bước 5 -->
+          <div class="workflow-card reveal">
+            <div class="workflow-step-num">05</div>
+            <div class="workflow-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Hỗ Trợ Bảo Hành</h3>
+            <p>
+              Duy trì chế độ kiểm tra định kỳ, xử lý kỹ thuật tốc hành để hệ
+              thống thang máy của gia đình anh luôn vận hành êm ái trọn đời.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         KHO VIDEO CHIA TÁCH THÀNH 2 BOX HOÀN TOÀN RIÊNG BIỆT
+         ========================================== -->
+    <section class="video-section" id="videos">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Khách Hàng Nói gì về Tôi</h2>
+          <p>
+            Mắt thấy tai nghe những chia sẻ thực tế từ các gia chủ đã tin tưởng
+            chọn Phương
+          </p>
+          <div class="trust-stats" style="margin-top: 20px; color: #444">
+            <span style="margin: 0 15px"
+              ><i class="fa-solid fa-star" style="color: #ffd700"></i>
+              <b>50+ Dự án bàn giao</b></span
+            >
+            |
+            <span style="margin: 0 15px"
+              ><i class="fa-solid fa-shield-halved" style="color: #007bff"></i>
+              <b>Bảo trì 24/7</b></span
+            >
+          </div>
+        </div>
+
+        <!-- BOX 1: KÊNH YOUTUBE -->
+        <div class="media-platform-box reveal">
+          <div class="platform-header">
+            <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+            <h3>Phóng sự với chủ nhà</h3>
+          </div>
+          <!-- Phóng sự chủ nhà -->
+          <div class="swiper mySwiper" style="padding: 20px 0">
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/0_bhabMgttM"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Cấu hình thang máy tốt nhất...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- Kết thúc phóng sự -->
+          <!-- giải thích kĩ thuật thang máy -->
+          <div class="platform-header">
+            <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+            <h3>Chia sẻ kĩ thuật thang máy</h3>
+          </div>
+          <div class="swiper mySwiper" style="padding: 20px 0">
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/0_bhabMgttM"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Cấu hình thang máy tốt nhất...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+
+              <div
+                class="swiper-slide"
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  padding: 10px;
+                "
+              >
+                <div
+                  class="video-frame-youtube"
+                  style="
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 10px;
+                  "
+                >
+                  <iframe
+                    style="position: absolute; width: 100%; height: 100%"
+                    src="https://www.youtube.com/embed/bDWj026ONdI"
+                  ></iframe>
+                </div>
+                <p
+                  style="
+                    text-align: center;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Xây Dựng Giếng Thang Máy Đạt Chuẩn...
+                </p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- Kết thúc chia sẻ kĩ thuật -->
+        </div>
+
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            },
+            loop: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+          });
+        </script>
+
+        <!-- BOX 2: KÊNH TIKTOK -->
+        <div class="media-platform-box reveal">
+          <div class="platform-header">
+            <i class="fa-brands fa-tiktok" style="color: #010101"></i>
+            <h3>Nhật Ký Công Trình (TikTok)</h3>
+          </div>
+
+          <div class="swiper tiktokSwiper" style="padding: 20px 0">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide tiktok-slide">
+                <div class="tiktok-container">
+                  <blockquote
+                    class="tiktok-embed"
+                    cite="https://www.tiktok.com/@phuongthangmay/video/7522471551325916424"
+                    data-video-id="7522471551325916424"
+                  >
+                    <section>
+                      <a
+                        href="https://www.tiktok.com/@phuongthangmay/video/7522471551325916424"
+                        >@phuongthangmay</a
+                      >
+                    </section>
+                  </blockquote>
+                </div>
+                <h3>Giới thiệu thang máy</h3>
+              </div>
+
+              <div class="swiper-slide tiktok-slide">
+                <div class="tiktok-container">
+                  <blockquote
+                    class="tiktok-embed"
+                    cite="https://www.tiktok.com/@phuongthangmay/video/7518016763544636679"
+                    data-video-id="7518016763544636679"
+                  >
+                    <section>
+                      <a
+                        href="https://www.tiktok.com/@phuongthangmay/video/7518016763544636679"
+                        >@phuongthangmay</a
+                      >
+                    </section>
+                  </blockquote>
+                </div>
+                <h3>Giá thang hiện nay</h3>
+              </div>
+
+              <div class="swiper-slide tiktok-slide">
+                <div class="tiktok-container">
+                  <blockquote
+                    class="tiktok-embed"
+                    cite="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                    data-video-id="7519124681870281991"
+                  >
+                    <section>
+                      <a
+                        href="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                        >@phuongthangmay</a
+                      >
+                    </section>
+                  </blockquote>
+                </div>
+                <h3>Các linh kiện thang máy</h3>
+              </div>
+
+              <div class="swiper-slide tiktok-slide">
+                <div class="tiktok-container">
+                  <blockquote
+                    class="tiktok-embed"
+                    cite="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                    data-video-id="7519124681870281991"
+                  >
+                    <section>
+                      <a
+                        href="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                        >@phuongthangmay</a
+                      >
+                    </section>
+                  </blockquote>
+                </div>
+                <h3>Tủ ARD cứu hộ</h3>
+              </div>
+
+              <div class="swiper-slide tiktok-slide">
+                <div class="tiktok-container">
+                  <blockquote
+                    class="tiktok-embed"
+                    cite="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                    data-video-id="7519124681870281991"
+                  >
+                    <section>
+                      <a
+                        href="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                        >@phuongthangmay</a
+                      >
+                    </section>
+                  </blockquote>
+                </div>
+                <h3>Tủ ARD cứu hộ</h3>
+              </div>
+
+              <div class="swiper-slide tiktok-slide">
+                <div class="tiktok-container">
+                  <blockquote
+                    class="tiktok-embed"
+                    cite="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                    data-video-id="7519124681870281991"
+                  >
+                    <section>
+                      <a
+                        href="https://www.tiktok.com/@phuongthangmay/video/7519124681870281991"
+                        >@phuongthangmay</a
+                      >
+                    </section>
+                  </blockquote>
+                </div>
+                <h3>Tủ ARD cứu hộ</h3>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <script>
+          // Slider 1: YouTube
+          var youtubeSwiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: { el: ".mySwiper .swiper-pagination", clickable: true },
+            breakpoints: {
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            },
+            loop: true,
+            autoplay: { delay: 3000 },
+          });
+
+          // Slider 2: TikTok (Độc lập)
+          var tiktokSwiper = new Swiper(".tiktokSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+              el: ".tiktokSwiper .swiper-pagination",
+              clickable: true,
+            },
+            breakpoints: {
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            },
+            loop: true,
+            autoplay: { delay: 4000 },
+          });
+        </script>
+
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PHẦN NGUYÊN TẮC LÀM NGHỀ (ADVANTAGES SECTION)
+         ========================================== -->
+    <section class="advantages" id="advantages">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Nguyên Tắc Làm Nghề</h2>
+          <p>
+            Những giá trị cốt lõi giúp tôi giữ vững uy tín thương hiệu cá nhân
+            trong suốt 8 năm qua
+          </p>
+        </div>
+
+        <div class="advantages-grid">
+          <div class="adv-card reveal">
+            <div class="adv-icon">
+              <i class="fa-solid fa-sliders" style="color: #0052cc"></i>
+            </div>
+            <h3>Chính Xác</h3>
+            <p>
+              Sai lệch cơ khí hố thang máy tính bằng milimet. Tôi nói không với
+              sự cẩu thả.
+            </p>
+          </div>
+          <div class="adv-card reveal">
+            <div class="adv-icon">
+              <i class="fa-solid fa-handshake" style="color: #22c55e"></i>
+            </div>
+            <h3>Minh Bạch</h3>
+            <p>
+              Tư vấn đúng chủng loại linh kiện thiết bị, báo giá trọn gói một
+              lần.
+            </p>
+          </div>
+          <div class="adv-card reveal">
+            <div class="adv-icon">
+              <i class="fa-solid fa-user-shield" style="color: #eab308"></i>
+            </div>
+            <h3>Trách Nhiệm</h3>
+            <p>
+              Là chuyên gia cá nhân độc lập, trách nhiệm đi liền với uy tín danh
+              dự.
+            </p>
+          </div>
+          <div class="adv-card reveal">
+            <div class="adv-icon">
+              <i
+                class="fa-solid fa-arrow-down-up-lock"
+                style="color: #ef4444"
+              ></i>
+            </div>
+            <h3>An Toàn Tuyệt Đối</h3>
+            <p>Ứng dụng triệt để bộ quy chuẩn khắt khe chuẩn Nhật Bản.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PHẦN DỰ ÁN TIÊU BIỂU
+         ========================================== -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Công Trình Thực Tế Tiêu Biểu</h2>
+          <p>
+            Bấm vào từng công trình để xem chi tiết giải pháp kỹ thuật cụ thể mà
+            tôi đã may đo
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item reveal" onclick="openProjectModal(1)">
+            <img src="./imgaes/ct1.jpg" alt="Thang máy kính biệt thự" />
+            <div class="gallery-overlay">
+              <h4>Thang Máy Kính Cường Lực Biệt Thự</h4>
+              <p>Giải pháp: May đo lấy sáng không gian biệt thự</p>
+              <div class="click-hint">
+                <i class="fa-solid fa-circle-info"></i> Bấm xem chi tiết kỹ
+                thuật
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal" onclick="openProjectModal(2)">
+            <img src="./imgaes/ct2.png" alt="Thang máy nhà phố" />
+            <div class="gallery-overlay">
+              <h4>Thang Máy Khung Thép Nhà Phố</h4>
+              <p>Giải pháp: Lắp đặt cải tạo trên diện tích hẹp</p>
+              <div class="click-hint">
+                <i class="fa-solid fa-circle-info"></i> Bấm xem chi tiết kỹ
+                thuật
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal" onclick="openProjectModal(3)">
+            <img src="./imgaes/ct3.png" alt="Cabin cao cấp" />
+            <div class="gallery-overlay">
+              <h4>Cabin Inox Gương Vàng Sang Trọng</h4>
+              <p>Thiết kế: Phối hoa văn ăn mòn nghệ thuật</p>
+              <div class="click-hint">
+                <i class="fa-solid fa-circle-info"></i> Bấm xem chi tiết kỹ
+                thuật
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPUP MODAL HIỂN THỊ DỰ ÁN CHI TIẾT -->
+    <div class="project-modal" id="projectModal">
+      <div class="modal-content">
+        <div class="modal-close-btn" onclick="closeProjectModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="modal-body">
+          <img id="modalImg" src="" alt="Ảnh dự án" />
+          <div class="modal-info-padding">
+            <span class="modal-tag" id="modalTag">Thông số kỹ thuật</span>
+            <h3 id="modalTitle">Tên dự án</h3>
+            <p class="modal-description" id="modalDesc">
+              Mô tả chi tiết dự án...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PHẦN LIÊN HỆ & MẠNG XÃ HỘI
+         ========================================== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="contact-info-side">
+            <h3>Kết Nối Trực Tiếp Với Tôi</h3>
+            <p>
+              Mọi thắc mắc kỹ thuật về kích thước thông thủy hố thang, lựa chọn
+              động cơ có hộp số hay không hộp số, hãy gọi trực tiếp cho tôi.
+            </p>
+
+            <div class="contact-channels">
+              <a href="tel:0963087385" class="contact-btn-link phone">
+                <i class="fa-solid fa-phone-volume"></i> Hotline Cá Nhân: 0963
+                087 385
+              </a>
+              <a
+                href="https://zalo.me/0963087385"
+                target="_blank"
+                class="contact-btn-link zalo"
+              >
+                <i class="fa-solid fa-comments"></i> Chat Zalo Trực Tiếp: 0963
+                087 385
+              </a>
+            </div>
+
+            <div class="social-media-block" style="margin-top: 35px">
+              <h4>Kênh Chia Sẻ Kinh Nghiệm Nghề:</h4>
+              <div class="social-icons-row">
+                <a
+                  href="https://www.facebook.com/phuong.thang.may.280011"
+                  target="_blank"
+                  class="social-icon-circle facebook"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a
+                  href="https://www.tiktok.com/@phuongthangmay"
+                  target="_blank"
+                  class="social-icon-circle tiktok"
+                  ><i class="fa-brands fa-tiktok"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/results?search_query=Phương+thang+máy+gia+đình"
+                  target="_blank"
+                  class="social-icon-circle youtube"
+                  ><i class="fa-brands fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-brand-statement">
+            <img src="./imgaes/5.jpg" alt="" />
+            <h4>Phương Thang Máy</h4>
+            <p style="color: #94a3b8; font-size: 14.5px; line-height: 1.6">
+              "8 năm kinh nghiệm chuyên sâu tại Hitachi giúp tôi hiểu rằng một
+              hệ thống cơ khí chuyển động an toàn bắt đầu từ sự trung thực và tỉ
+              mỉ của người thợ kỹ thuật."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Phương Thang Máy.</p>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT XỬ LÝ HÀNH VI 
+         ========================================== -->
+    <script {nonce}>
+      // 1. CHUYỂN SLIDER BANNER TỰ ĐỘNG
+      let currentSlideIndex = 0;
+      const slides = document.querySelectorAll(".banner-slide");
+      const totalSlides = slides.length;
+
+      function showNextSlide() {
+        slides[currentSlideIndex].classList.remove("active");
+        currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+        slides[currentSlideIndex].classList.add("active");
+      }
+      setInterval(showNextSlide, 4000);
+
+      // 2. DỮ LIỆU MODAL DỰ ÁN
+      const projectsData = {
+        1: {
+          title: "Thang Máy Biệt Thự Cao Cấp",
+          tag: "Giải pháp kiến trúc không gian",
+          img: "./imgaes/ct1.jpg",
+          desc: "Dự án biệt thự sử dụng giải pháp thang inox vàng giúp tận dụng tối đa ánh sáng tự nhiên. Tôi trực tiếp áp dụng tiêu chuẩn căn chỉnh ray cơ khí nghiêm ngặt học hỏi từ Hitachi, triệt tiêu hoàn toàn độ rung lắc nhỏ nhất.",
+        },
+        2: {
+          title: "Thang Máy Khung Thép Nhà Phố Cải Tạo",
+          tag: "Tối ưu hóa không gian hẹp",
+          img: "./imgaes/ct2.png",
+          desc: "Công trình nhà cải tạo có diện tích hố thang cực kỳ hạn chế. Tôi đã trực tiếp may đo hình học không gian, thiết kế hệ khung thép kết cấu mỏng tối ưu giúp gia chủ có cabin rộng rãi nhất.",
+        },
+        3: {
+          title: "Cabin Thang Máy Inox Gương Vàng Tinh Xảo",
+          tag: "Thẩm mỹ thiết kế đỉnh cao",
+          img: "./imgaes/ct3.jpg",
+          desc: "Nội thất vách cabin được tôi tuyển lựa dòng vật liệu Inox gương vàng chống trầy nhập khẩu phối họa tiết ăn mòn tinh tế, tạo nên điểm nhấn sang trọng xứng tầm.",
+        },
+      };
+
+      function openProjectModal(id) {
+        const modal = document.getElementById("projectModal");
+        const data = projectsData[id];
+        if (data) {
+          document.getElementById("modalImg").src = data.img;
+          document.getElementById("modalTitle").innerText = data.title;
+          document.getElementById("modalTag").innerText = data.tag;
+          document.getElementById("modalDesc").innerText = data.desc;
+          modal.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      function closeProjectModal() {
+        document.getElementById("projectModal").classList.remove("open");
+        document.body.style.overflow = "auto";
+      }
+
+      document
+        .getElementById("projectModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeProjectModal();
+        });
+
+      // 3. Đổi màu Header khi cuộn
+      const header = document.getElementById("main-header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // 4. Menu di động
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const navMenu = document.getElementById("nav-menu");
+      mobileMenuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        mobileMenuBtn.querySelector("i").className = navMenu.classList.contains(
+          "active",
+        )
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      });
+
+      // 5. Hiệu ứng cuộn Reveal
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+        revealElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          if (elementTop < triggerBottom) {
+            element.classList.add("active");
+          }
+        });
+      };
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("DOMContentLoaded", revealOnScroll);
+    </script>
+  </body>
+</html>
