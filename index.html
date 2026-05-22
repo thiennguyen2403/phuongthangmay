@@ -12,6 +12,14 @@
       rel="stylesheet"
     />
     <style>
+      .hero-slider-track {
+  cursor: grab;
+  user-select: none;
+}
+
+.hero-slider-track img {
+  pointer-events: none;
+}
       /* VALIDATE FORM */
 .form input.input-error,
 .form select.input-error,
@@ -304,7 +312,7 @@
       }
 
       .countdown-wrap::before {
-        content: "ƯU ĐÃI ĐANG CHẠY";
+        content: "TƯ VẤN MIỄN PHÍ";
         position: absolute;
         top: 16px;
         right: -44px;
@@ -568,9 +576,17 @@
         overflow: hidden;
         background:
           linear-gradient(135deg, rgba(6, 22, 46, 0.28), rgba(6, 22, 46, 0.5)),
-          url("./imgaes/youtobe1.png") center/cover;
+          url("./imgaes/youtobe3.png") center/cover;
       }
 
+      @media (max-width:600px){
+
+  .video-thumb{
+    aspect-ratio:16/9 !important;
+    background-size: contain !important;
+  }
+
+}
       .video-card:nth-child(2) .video-thumb {
         background:
           linear-gradient(135deg, rgba(6, 22, 46, 0.28), rgba(6, 22, 46, 0.5)),
@@ -580,13 +596,13 @@
       .video-card:nth-child(3) .video-thumb {
         background:
           linear-gradient(135deg, rgba(6, 22, 46, 0.28), rgba(6, 22, 46, 0.5)),
-          url("./imgaes/youtobe1.png") center/cover;
+          url("./imgaes/youtobe2.png") center/cover;
       }
 
       .video-card:nth-child(4) .video-thumb {
         background:
           linear-gradient(135deg, rgba(6, 22, 46, 0.28), rgba(6, 22, 46, 0.5)),
-          url("./imgaes/youtobe1.png") center/cover;
+          url("./imgaes/youtobe4.png") center/cover;
       }
 
       .speaker-cutout {
@@ -920,6 +936,103 @@
         text-align: center;
       }
 
+
+      .hero-slider {
+        position: relative;
+        margin: 26px 0 24px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .hero-slider-track {
+        display: flex;
+        animation: heroSliderMove 15s infinite;
+      }
+
+      .hero-slide {
+        position: relative;
+        flex: 0 0 100%;
+        min-width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+      }
+
+      .hero-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(6, 22, 46, 0.86), rgba(6, 22, 46, 0.08));
+      }
+
+      .hero-slide-caption {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        z-index: 2;
+      }
+
+      .hero-slide-caption strong {
+        display: block;
+        color: #fff;
+        font-size: 20px;
+        line-height: 1.15;
+        margin-bottom: 4px;
+      }
+
+      .hero-slide-caption span {
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .hero-slider-dots {
+        position: absolute;
+        left: 18px;
+        bottom: 14px;
+        z-index: 3;
+        display: flex;
+        gap: 6px;
+      }
+
+      .hero-slider-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.52);
+      }
+
+      .hero-slider-dots span:first-child {
+        width: 22px;
+        background: #fff;
+      }
+
+      @keyframes heroSliderMove {
+        0%, 28% { transform: translateX(0); }
+        33%, 61% { transform: translateX(-100%); }
+        66%, 94% { transform: translateX(-200%); }
+        100% { transform: translateX(0); }
+      }
+
+      .project-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .project-stack {
+        display: grid;
+        gap: 14px;
+      }
+
       @media (min-width: 768px) {
         .video-list {
           max-width: 920px;
@@ -958,6 +1071,9 @@
         }
         .grid-3 {
           grid-template-columns: 1fr;
+        }
+        .project-stack-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .countdown {
           grid-template-columns: repeat(2, 1fr);
@@ -1391,11 +1507,1075 @@
           padding: 7px 9px;
         }
       }
+
+      /* FINAL MOBILE TUNING: ngắn hơn, card đi ngang 2 cột, đánh giá bám theo từng ảnh */
+      @media (max-width: 600px) {
+        .hero {
+          padding-top: 22px;
+        }
+
+        .hero-grid {
+          gap: 18px;
+        }
+
+        .eyebrow {
+          margin-bottom: 10px;
+          padding: 6px 10px;
+          font-size: 12px;
+        }
+
+        h1 {
+          font-size: clamp(27px, 8.5vw, 34px);
+          margin-bottom: 10px;
+        }
+
+        .hero p {
+          font-size: 15px;
+          margin-bottom: 12px;
+        }
+
+        .hero-slider {
+          margin: 8px 0 14px;
+          border-radius: 18px;
+        }
+
+        .hero-slide {
+          aspect-ratio: 4 / 3;
+        }
+
+        .hero-slide-caption {
+          left: 12px;
+          right: 12px;
+          bottom: 12px;
+        }
+
+        .hero-slide-caption strong {
+          font-size: 15px;
+        }
+
+        .hero-slide-caption span {
+          display: none;
+        }
+
+        .hero-slider-dots {
+          left: 12px;
+          bottom: 9px;
+        }
+
+        .hero-actions {
+          gap: 8px;
+          margin-bottom: 12px;
+        }
+
+        .hero-actions .btn {
+          padding: 11px 14px;
+          font-size: 13px;
+        }
+
+        .hero-card {
+          padding: 14px;
+        }
+
+        .hero-card h3 {
+          font-size: 17px;
+          margin-bottom: 8px;
+        }
+
+        .check-list {
+          gap: 7px;
+          font-size: 13px;
+        }
+
+        .portrait-card {
+          display: none;
+        }
+
+        .section,
+        .video-section {
+          padding: 34px 0;
+        }
+
+        .section-title {
+          margin-bottom: 16px;
+        }
+
+        .section-title h2,
+        h2 {
+          font-size: 24px;
+        }
+
+        .section-title p {
+          font-size: 13px;
+        }
+
+        .about-box p {
+          font-size: 13px;
+          margin-bottom: 12px;
+        }
+
+        .about-stats {
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 8px;
+        }
+
+        .stat {
+          padding: 10px 6px;
+        }
+
+        .stat strong {
+          font-size: 20px;
+        }
+
+        .stat span {
+          font-size: 10px;
+          line-height: 1.2;
+        }
+
+        #van-de .grid-3,
+        #quy-trinh .grid-3,
+        #du-an .project-stack-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 10px !important;
+        }
+
+        #van-de .card,
+        #quy-trinh .card {
+          padding: 13px 11px;
+          border-radius: 16px;
+          min-height: 0;
+        }
+
+        #van-de .card .icon,
+        #quy-trinh .card .icon {
+          width: 34px;
+          height: 34px;
+          border-radius: 11px;
+          font-size: 17px;
+          margin-bottom: 8px;
+        }
+
+        #van-de .card h3,
+        #quy-trinh .card h3 {
+          font-size: 14px;
+          line-height: 1.22;
+          margin-bottom: 5px;
+        }
+
+        #van-de .card p,
+        #quy-trinh .card p {
+          font-size: 12px;
+          line-height: 1.35;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .project-stack {
+          gap: 8px;
+        }
+
+        .project-card {
+          min-height: 155px;
+          border-radius: 16px;
+        }
+
+        .project-content {
+          padding: 12px;
+        }
+
+        .project-content h3 {
+          font-size: 14px;
+          line-height: 1.2;
+        }
+
+        .project-content p {
+          display: none;
+        }
+
+        .project-stack .testimonial {
+          padding: 10px;
+          border-radius: 14px;
+        }
+
+        .project-stack .testimonial p {
+          font-size: 12px;
+          line-height: 1.35;
+          margin-bottom: 7px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .project-stack .testimonial strong {
+          font-size: 11px;
+          line-height: 1.25;
+        }
+
+        .countdown-wrap {
+          padding: 16px;
+        }
+
+        .countdown-title {
+          font-size: 21px;
+        }
+
+        .countdown-wrap .sub {
+          font-size: 13px;
+        }
+
+        .form {
+          gap: 9px;
+        }
+
+        .form input,
+        .form select,
+        .form textarea {
+          padding: 12px;
+          border-radius: 11px;
+          font-size: 14px;
+        }
+
+        .form textarea {
+          min-height: 68px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        #van-de .grid-3,
+        #quy-trinh .grid-3,
+        #du-an .project-stack-grid {
+          gap: 8px !important;
+        }
+
+        #van-de .card,
+        #quy-trinh .card {
+          padding: 12px 9px;
+        }
+
+        #van-de .card h3,
+        #quy-trinh .card h3 {
+          font-size: 13px;
+        }
+
+        #van-de .card p,
+        #quy-trinh .card p,
+        .project-stack .testimonial p {
+          font-size: 11px;
+        }
+
+        .project-card {
+          min-height: 132px;
+        }
+      }
+
+
+      /* MOBILE BOXES NGANG: trên điện thoại các box đi 2 cột để trang ngắn hơn */
+      @media (max-width: 600px) {
+        .grid-3,
+        .steps,
+        .project-stack-grid,
+        .video-list,
+        .faq {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 10px !important;
+          align-items: stretch;
+        }
+
+        .about-stats {
+          display: grid !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 8px !important;
+        }
+
+        .grid-3 > .card,
+        .steps > .step,
+        .project-stack,
+        .video-card,
+        .faq details {
+          min-width: 0;
+          height: 100%;
+        }
+
+        .card,
+        .step,
+        .testimonial,
+        details {
+          padding: 12px 10px !important;
+          border-radius: 15px !important;
+        }
+
+        .card .icon {
+          width: 32px !important;
+          height: 32px !important;
+          border-radius: 10px !important;
+          font-size: 16px !important;
+          margin-bottom: 8px !important;
+        }
+
+        .card h3,
+        .step h3,
+        summary {
+          font-size: 13.5px !important;
+          line-height: 1.25 !important;
+          margin-bottom: 5px !important;
+        }
+
+        .card p,
+        .step p,
+        .testimonial p,
+        details p,
+        .video-quote {
+          font-size: 11.5px !important;
+          line-height: 1.35 !important;
+        }
+
+        .card p,
+        .step p,
+        .testimonial p,
+        details p {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .steps > .step {
+          grid-template-columns: 1fr !important;
+          gap: 7px !important;
+        }
+
+        .step::before {
+          width: 30px !important;
+          height: 30px !important;
+          font-size: 14px !important;
+        }
+
+        .project-card {
+          min-height: 142px !important;
+        }
+
+        .project-content {
+          padding: 10px !important;
+        }
+
+        .project-content h3 {
+          font-size: 13px !important;
+          line-height: 1.2 !important;
+        }
+
+        .project-stack .testimonial {
+          padding: 9px !important;
+          margin: 0;
+        }
+
+        .project-stack .testimonial strong {
+          font-size: 10.5px !important;
+          line-height: 1.25 !important;
+        }
+
+        .video-thumb {
+          aspect-ratio: 4 / 3 !important;
+        }
+
+        .video-quote {
+          padding: 10px 8px !important;
+          min-height: 56px;
+        }
+
+        .play-button {
+          width: 42px !important;
+          height: 42px !important;
+          font-size: 18px !important;
+        }
+
+        .person-box {
+          display: none !important;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .grid-3,
+        .steps,
+        .project-stack-grid,
+        .video-list,
+        .faq {
+          gap: 8px !important;
+        }
+
+        .card,
+        .step,
+        .testimonial,
+        details {
+          padding: 10px 8px !important;
+        }
+
+        .card h3,
+        .step h3,
+        summary {
+          font-size: 12.5px !important;
+        }
+
+        .card p,
+        .step p,
+        .testimonial p,
+        details p,
+        .video-quote {
+          font-size: 10.8px !important;
+        }
+
+        .project-card {
+          min-height: 124px !important;
+        }
+      }
+
+
+      /* UPDATE: mobile gọn, không còn nút xem thêm ngoài phần video */
+      .hero-slider-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        animation: none !important;
+        scrollbar-width: none;
+      }
+
+      .hero-slider-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hero-slide {
+        scroll-snap-align: start;
+        cursor: pointer;
+        border: 0;
+      }
+
+      .project-trigger {
+        cursor: pointer;
+      }
+
+      .concern-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .video-more-btn {
+        display: none;
+        width: min(100%, 320px);
+        margin: 18px auto 0;
+        border: 1px solid #d8e0ee;
+        background: #fff;
+        color: var(--primary);
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-family: inherit;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .project-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .project-modal.is-open {
+        display: flex;
+      }
+
+      .project-modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(6, 22, 46, 0.72);
+        backdrop-filter: blur(6px);
+      }
+
+      .project-modal-card {
+        position: relative;
+        width: min(920px, 100%);
+        max-height: min(88vh, 820px);
+        overflow: auto;
+        background: #fff;
+        border-radius: 26px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project-modal-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        background: #e8edf7;
+      }
+
+      .project-modal-body {
+        padding: 30px;
+      }
+
+      .project-modal-body h2 {
+        margin-bottom: 10px;
+      }
+
+      .project-modal-body p {
+        color: var(--muted);
+        margin: 0 0 12px;
+      }
+
+      .project-modal-quote {
+        background: var(--light);
+        border-left: 5px solid var(--primary);
+        border-radius: 16px;
+        padding: 16px;
+        margin: 16px 0 20px;
+      }
+
+      .project-modal-quote p {
+        font-style: italic;
+        color: #24364f;
+      }
+
+      .project-modal-quote strong {
+        color: var(--dark);
+      }
+
+      .project-modal-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 2;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--dark);
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      }
+
+      @media (max-width: 900px) {
+        .concern-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .hero-slide {
+          flex-basis: 86%;
+          min-width: 86%;
+          aspect-ratio: 4 / 3;
+        }
+
+        .hero-slider {
+          overflow: hidden;
+        }
+
+        .hero-slider-track {
+          gap: 10px;
+          padding-right: 18px;
+        }
+
+        .hero-slider-dots {
+          display: none;
+        }
+
+        .grid-3,
+        .steps,
+        .project-stack-grid,
+        .video-list,
+        .faq {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+
+        .video-list:not(.is-expanded) .video-card:nth-child(n + 3) {
+          display: none;
+        }
+
+        .video-more-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .project-modal-card {
+          grid-template-columns: 1fr;
+          max-height: 90vh;
+          border-radius: 22px;
+        }
+
+        .project-modal-card img {
+          min-height: 0;
+          height: 230px;
+        }
+
+        .project-modal-body {
+          padding: 20px;
+        }
+
+        .project-modal-body h2 {
+          font-size: 24px;
+        }
+
+        .project-modal-body p {
+          font-size: 14px;
+        }
+      }
+
+
+
+      /* PROCESS ARROW STYLE */
+      #quy-trinh.process-section {
+        background:
+          radial-gradient(circle at 12% 10%, rgba(246, 183, 60, 0.16), transparent 30%),
+          linear-gradient(135deg, #06162e 0%, #0c2547 58%, #08366f 100%);
+        color: #fff;
+        overflow: hidden;
+      }
+
+      #quy-trinh.process-section .section-title {
+        margin-bottom: 46px;
+      }
+
+      #quy-trinh.process-section .tag {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(246, 183, 60, 0.16);
+        color: #f6b73c;
+        font-size: 12px;
+      }
+
+      #quy-trinh.process-section h2 {
+        color: #fff;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #quy-trinh .process-subtitle {
+        color: rgba(255, 255, 255, 0.72);
+        margin: 8px 0 0;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .process-flow {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .process-flow::before {
+        content: "";
+        position: absolute;
+        top: 39px;
+        left: 11%;
+        right: 11%;
+        height: 2px;
+        background: rgba(246, 183, 60, 0.42);
+      }
+
+      .process-step {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 0 16px;
+      }
+
+      .process-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 32px;
+        right: -8px;
+        width: 18px;
+        height: 18px;
+        border-top: 3px solid rgba(246, 183, 60, 0.85);
+        border-right: 3px solid rgba(246, 183, 60, 0.85);
+        transform: rotate(45deg);
+      }
+
+      .process-number {
+        width: 78px;
+        height: 78px;
+        border-radius: 50%;
+        margin: 0 auto 18px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #f6b73c, #ff8a00);
+        color: #fff;
+        font-size: 28px;
+        font-weight: 900;
+        box-shadow: 0 14px 30px rgba(246, 183, 60, 0.28);
+        border: 5px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .process-step h3 {
+        margin: 0 0 8px;
+        color: #fff;
+        font-size: 15px;
+        line-height: 1.25;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+      }
+
+      .process-step p {
+        max-width: 210px;
+        margin: 0 auto;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .process-cta {
+        margin: 44px auto 0;
+        max-width: 820px;
+        text-align: center;
+        padding: 28px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(10px);
+      }
+
+      .process-cta h3 {
+        margin: 0 0 8px;
+        color: #fff;
+        font-size: clamp(24px, 3vw, 34px);
+        line-height: 1.18;
+      }
+
+      .process-cta p {
+        margin: 0 0 18px;
+        color: rgba(255, 255, 255, 0.74);
+        font-weight: 700;
+      }
+
+      @media (max-width: 900px) {
+        #quy-trinh.process-section {
+          padding: 42px 0;
+        }
+
+        #quy-trinh.process-section .section-title {
+          margin-bottom: 22px;
+        }
+
+        #quy-trinh .process-subtitle {
+          font-size: 12px;
+        }
+
+        .process-flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 26px 12px;
+        }
+
+        .process-flow::before,
+        .process-step::after {
+          display: none;
+        }
+
+        .process-step {
+          padding: 14px 8px;
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.07);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .process-number {
+          width: 52px;
+          height: 52px;
+          margin-bottom: 10px;
+          font-size: 20px;
+          border-width: 3px;
+        }
+
+        .process-step h3 {
+          font-size: 12px;
+          margin-bottom: 5px;
+        }
+
+        .process-step p {
+          font-size: 11px;
+          line-height: 1.35;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .process-cta {
+          margin-top: 24px;
+          padding: 20px 14px;
+          border-radius: 22px;
+        }
+
+        .process-cta h3 {
+          font-size: 22px;
+        }
+
+        .process-cta p {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .process-flow {
+          gap: 10px;
+        }
+
+        .process-step {
+          padding: 12px 6px;
+        }
+
+        .process-step h3 {
+          font-size: 11px;
+        }
+
+        .process-step p {
+          font-size: 10.5px;
+        }
+      }
+
+
+      /* FLOATING CALL BUTTON: thêm icon + hiệu ứng chuyển động */
+      .floating-cta {
+        animation: floatingCtaEnter 0.55s ease-out 0.2s both;
+      }
+
+      .floating-cta a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-width: 118px;
+        line-height: 1;
+        user-select: none;
+      }
+
+      .floating-cta .call-btn {
+        position: relative;
+        overflow: visible;
+        background: linear-gradient(135deg, #f6b73c, #ff8a00);
+        color: #1f1300;
+        animation: callButtonFloat 2.2s ease-in-out infinite;
+      }
+
+      .floating-cta .call-btn::before,
+      .floating-cta .call-btn::after {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 999px;
+        border: 2px solid rgba(246, 183, 60, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        animation: callHalo 1.8s ease-out infinite;
+      }
+
+      .floating-cta .call-btn::after {
+        animation-delay: 0.55s;
+      }
+
+      .floating-cta .call-icon,
+      .floating-cta .register-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        background: rgba(255, 255, 255, 0.96);
+        color: #08366f;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+      }
+
+      .floating-cta .call-icon {
+        animation: phoneRing 1.15s ease-in-out infinite;
+      }
+
+      .floating-cta .call-icon svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+
+      .floating-cta .register-btn {
+        background: #ffffff;
+        color: var(--primary);
+        border: 1px solid #e5ebf5;
+      }
+
+      .floating-cta .register-icon {
+        font-size: 14px;
+      }
+
+      @keyframes floatingCtaEnter {
+        from {
+          opacity: 0;
+          transform: translateY(18px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes callButtonFloat {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+      }
+
+      @keyframes phoneRing {
+        0%, 100% {
+          transform: rotate(0deg);
+        }
+        10%, 30%, 50% {
+          transform: rotate(-14deg);
+        }
+        20%, 40%, 60% {
+          transform: rotate(14deg);
+        }
+        70% {
+          transform: rotate(0deg);
+        }
+      }
+
+      @keyframes callHalo {
+        0% {
+          opacity: 0.75;
+          transform: scale(0.92);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.35);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .floating-cta {
+          right: 12px;
+          bottom: 12px;
+          gap: 8px;
+        }
+
+        .floating-cta a {
+          min-width: 104px;
+          padding: 10px 12px !important;
+          font-size: 13px !important;
+        }
+
+        .floating-cta .call-icon,
+        .floating-cta .register-icon {
+          width: 24px;
+          height: 24px;
+        }
+
+        .floating-cta .call-icon svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .floating-cta,
+        .floating-cta .call-btn,
+        .floating-cta .call-btn::before,
+        .floating-cta .call-btn::after,
+        .floating-cta .call-icon {
+          animation: none !important;
+        }
+      }
+
+.project-more-btn{
+  display:none;
+}
+
+@media (max-width:600px){
+
+  .project-stack-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  /* mặc định chỉ hiện 4 */
+  .project-stack-grid .project-stack{
+  display:block;
+}
+
+.project-stack-grid:not(.is-expanded)
+.project-stack:nth-child(n+5){
+  display:none !important;
+}
+
+.project-stack-grid.is-expanded
+.project-stack:nth-child(n+5){
+  display:block !important;
+}
+
+  .project-more-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    margin-top:16px;
+    padding:13px 16px;
+    border:none;
+    border-radius:999px;
+    background:#08366f;
+    color:#fff;
+    font-weight:800;
+    font-family:inherit;
+    cursor:pointer;
+  }
+}
+.project-detail-list{
+  margin:16px 0 0;
+  padding-left:20px;
+
+  display:grid;
+  gap:10px;
+}
+
+
     </style>
+ 
   </head>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const projectMoreBtn = document.querySelector(".project-more-btn");
+  const projectGrid = document.querySelector(".project-stack-grid");
+
+  if (!projectMoreBtn || !projectGrid) return;
+
+  projectMoreBtn.addEventListener("click", function () {
+    projectGrid.classList.toggle("is-expanded");
+
+    projectMoreBtn.textContent = projectGrid.classList.contains("is-expanded")
+      ? "Thu gọn"
+      : "Xem thêm công trình";
+  });
+});
+</script>
   <body>
     <div class="mobile-offer-bar">
-      <div class="mobile-offer-title">THỜI GIAN NHẬN ƯU ĐÃI CHỈ CÒN:</div>
+      <div class="mobile-offer-title">SUẤT TƯ VẤN MIỄN PHÍ CÒN:</div>
 
       <div class="mobile-offer-row">
         <div class="mobile-time-group">
@@ -1418,7 +2598,7 @@
         </div>
 
         <div class="mobile-offer-cta">
-          <div class="mobile-discount">ƯU ĐÃI 30%</div>
+          <div class="mobile-discount">MIỄN PHÍ</div>
           <a href="#dang-ky">ĐĂNG KÝ NGAY</a>
         </div>
       </div>
@@ -1430,23 +2610,22 @@
           Hotline/Zalo: <strong>0963 087 385</strong> · Email:
           <strong>phuongthangmay@gmail.com</strong>
         </div>
-        <div>Khảo sát miễn phí cho nhà phố, biệt thự, khách sạn mini</div>
+        <div>Tư vấn miễn phí · Đúng kĩ thuật · Báo giá rõ ràng</div>
       </div>
     </div>
 
     <nav class="nav">
       <div class="container nav-inner">
         <a href="#top" class="logo">
-          <span class="logo-mark">P</span>
+         
           <span>Phương Thang Máy</span>
         </a>
         <div class="menu">
           <a href="#gioi-thieu">Giới thiệu</a>
-          <a href="#video">Video</a>
-          <a href="#van-de">Vấn đề</a>
           <a href="#giai-phap">Giải pháp</a>
           <a href="#du-an">Dự án</a>
           <a href="#quy-trinh">Quy trình</a>
+          <a href="#faq">FAQ</a>
         </div>
         <a class="btn btn-primary" href="#dang-ky">Đăng ký tư vấn</a>
       </div>
@@ -1456,87 +2635,145 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <div class="eyebrow">
-              Ưu đãi tư vấn tháng này · Chỉ nhận số lượng giới hạn
-            </div>
-            <h1>
-              Lắp thang máy đúng nhu cầu, an toàn và tối ưu chi phí cho ngôi nhà
-              của bạn
-            </h1>
+            <div class="eyebrow">Tư vấn miễn phí · Đúng kĩ thuật · Báo giá rõ ràng</div>
+
+   <div class="hero-slider" aria-label="Hình ảnh công trình thực tế">
+  <div class="hero-slider-track">
+
+    <div class="hero-slide project-trigger"
+      role="button"
+      tabindex="0"
+      data-title="Nhà phố hiện đại"
+      data-img="./imgaes/ct2.1.png"
+      data-short="Ngõ 6 - Trần Kim Xuyến · Hà Nội"
+      data-detail="Khung thép kết hợp kính cường lực.|Tối ưu diện tích giữa cầu thang bộ.|Inox gương cao cấp sang trọng.|Đèn LED hiện đại, vận hành êm ái.|Phù hợp gia đình nhiều thế hệ."
+      data-quote="Được giải thích dễ hiểu, biết rõ nhà cần chuẩn bị gì trước khi làm hố thang."
+      data-owner="Anh Tuấn · Chủ đầu tư nhà phố">
+
+      <img src="./imgaes/ct2.1.png" alt="Nhà phố hiện đại" />
+
+      <div class="hero-slide-caption">
+        <strong>Nhà phố hiện đại</strong>
+        <span>Giải pháp tối ưu diện tích.</span>
+      </div>
+    </div>
+
+    <div class="hero-slide project-trigger"
+      role="button"
+      tabindex="0"
+      data-title="Biệt thự gia đình"
+      data-img="./imgaes/ct1.png"
+      data-short="Sơn Tây · Hà Nội"
+      data-detail="Cabin inox gương vàng cao cấp.|Đèn LED âm trần sang trọng.|Thiết kế hài hòa nội thất biệt thự.|Động cơ vận hành ổn định, êm ái.|Tối ưu tải trọng theo nhu cầu sử dụng."
+      data-quote="Báo giá rõ từng hạng mục, dễ so sánh giữa các phương án."
+      data-owner="Anh Hùng · Chủ đầu tư biệt thự">
+
+      <img src="./imgaes/ct1.png" alt="Biệt thự gia đình" />
+
+      <div class="hero-slide-caption">
+        <strong>Biệt thự gia đình</strong>
+        <span>Cabin sang trọng, vận hành êm.</span>
+      </div>
+    </div>
+
+    <div class="hero-slide project-trigger"
+      role="button"
+      tabindex="0"
+      data-title="Nhà cải tạo có thang máy"
+      data-img="./imgaes/ct3.png"
+      data-short="Thành phố Bắc Ninh"
+      data-detail="Giải pháp cho nhà đang sử dụng.|Tối ưu vị trí hố thang tiết kiệm diện tích.|Thi công an toàn, đúng tiến độ.|Cabin hiện đại, dễ phối nội thất.|Hướng dẫn sử dụng và bảo trì rõ ràng."
+      data-quote="Sau lắp đặt có hướng dẫn sử dụng và lịch bảo trì nên yên tâm hơn."
+      data-owner="Chị Lan · Khách hàng gia đình">
+
+      <img src="./imgaes/ct3.png" alt="Nhà cải tạo có thang máy" />
+
+      <div class="hero-slide-caption">
+        <strong>Nhà cải tạo</strong>
+        <span>Tối ưu không gian sử dụng.</span>
+      </div>
+    </div>
+
+    <div class="hero-slide project-trigger"
+      role="button"
+      tabindex="0"
+      data-title="Công trình tải khách"
+      data-img="./imgaes/ct4.png"
+      data-short="Minh Khai · Hà Nội"
+      data-detail="Thiết kế cho công trình sử dụng thường xuyên.|Tải trọng lớn, vận hành ổn định.|Hệ điều khiển thông minh hiện đại.|Cabin inox chống xước bền đẹp.|Có kế hoạch bảo trì định kỳ rõ ràng."
+      data-quote="Tư vấn rõ ràng, dễ hiểu và rất thực tế."
+      data-owner="Mr Ngọc">
+
+      <img src="./imgaes/ct4.png" alt="Công trình tải khách" />
+
+      <div class="hero-slide-caption">
+        <strong>Công trình tải khách</strong>
+        <span>Ổn định, phù hợp sử dụng liên tục.</span>
+      </div>
+    </div>
+
+    <div class="hero-slide project-trigger"
+      role="button"
+      tabindex="0"
+      data-title="Thang kính nhà phố"
+      data-img="./imgaes/ct5.png"
+      data-short="Ngõ Giếng · Hà Nội"
+      data-detail="Giải pháp cho nhà phố diện tích nhỏ.|Thiết kế nhỏ gọn nhưng tiện nghi.|Cabin kính tạo cảm giác rộng hơn.|Tối ưu không gian sinh hoạt.|Vận hành ổn định, tiết kiệm điện."
+      data-quote="Được báo giá rõ ngay từ đầu nên rất yên tâm."
+      data-owner="Mr Oanh">
+
+      <img src="./imgaes/ct5.png" alt="Thang kính nhà phố" />
+
+      <div class="hero-slide-caption">
+        <strong>Thang kính nhà phố</strong>
+        <span>Giải pháp đẹp cho nhà phố nhỏ.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-slider-dots" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+            <h1>Xem công trình thật, chọn thang máy đúng cho nhà bạn</h1>
             <p>
-              Phương Thang Máy đồng hành từ khảo sát hố thang, chọn tải trọng,
-              tư vấn mẫu cabin, báo giá minh bạch đến lắp đặt và bảo trì định
-              kỳ.
+              Tư vấn nhanh về kích thước, tải trọng, chi phí và phương án lắp đặt phù hợp.
             </p>
+
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#dang-ky"
-                >Tôi muốn được khảo sát miễn phí</a
-              >
-              <a class="btn btn-outline" href="#video">Xem video thực tế</a>
+              <a class="btn btn-primary" href="#dang-ky">Nhận tư vấn miễn phí</a>
+              <a class="btn btn-outline" href="#du-an">Xem công trình thực tế</a>
             </div>
             <div class="hero-card">
-              <h3>Dành cho ai?</h3>
+              <h3>Phù hợp cho</h3>
               <ul class="check-list">
-                <li>
-                  <span>✓</span> Gia đình đang xây mới hoặc cải tạo nhà phố,
-                  biệt thự.
-                </li>
-                <li>
-                  <span>✓</span> Chủ nhà muốn lắp thang máy nhưng chưa rõ chi
-                  phí, kích thước, tải trọng.
-                </li>
-                <li>
-                  <span>✓</span> Công trình cần đơn vị tư vấn dễ hiểu, rõ quy
-                  trình, có bảo trì sau lắp đặt.
-                </li>
+                <li><span>✓</span> Nhà phố, biệt thự, khách sạn mini.</li>
+                <li><span>✓</span> Cần rõ kích thước, tải trọng, chi phí.</li>
               </ul>
             </div>
 
             <div class="portrait-card">
-              <div class="portrait-photo">
-                <!-- Thay bằng ảnh thật: <img src="portrait-phuong.jpg" alt="Chân dung Phương Thang Máy" /> -->
-                P
-              </div>
+              <div class="portrait-photo">P</div>
               <div>
                 <h3>Phương · Tư vấn thang máy gia đình</h3>
-                <p>
-                  Trực tiếp tư vấn giải pháp thang máy theo thực tế công trình,
-                  nhu cầu sử dụng và ngân sách của gia đình.
-                </p>
+                <p>Tư vấn trực tiếp theo mặt bằng, nhu cầu sử dụng và ngân sách thực tế.</p>
               </div>
             </div>
           </div>
 
           <div id="dang-ky" class="countdown-wrap">
-            <span class="offer">Tặng gói khảo sát + tư vấn cấu hình sơ bộ</span>
-            <h2 class="countdown-title">
-              Đồng hồ ưu đãi: đăng ký trước khi hết thời gian
-            </h2>
-            <p class="sub">
-              Giữ suất tư vấn miễn phí và nhận phương án sơ bộ cho công trình
-              của bạn.
-            </p>
-            <div class="countdown" aria-label="Đếm ngược ưu đãi">
-              <div class="timebox">
-                <strong id="days">03</strong><small>Ngày</small>
-              </div>
-              <div class="timebox">
-                <strong id="hours">00</strong><small>Giờ</small>
-              </div>
-              <div class="timebox">
-                <strong id="minutes">00</strong><small>Phút</small>
-              </div>
-              <div class="timebox">
-                <strong id="seconds">00</strong><small>Giây</small>
-              </div>
+            <span class="offer">Miễn phí khảo sát + tư vấn phương án sơ bộ</span>
+            <h2 class="countdown-title">Để lại thông tin, Phương sẽ tư vấn phương án phù hợp</h2>
+            <p class="sub">Không ép mua. Bạn nhận tư vấn ban đầu về kích thước, tải trọng và khoảng chi phí.</p>
+            <div class="countdown" aria-label="Đếm ngược suất tư vấn miễn phí">
+              <div class="timebox"><strong id="days">03</strong><small>Ngày</small></div>
+              <div class="timebox"><strong id="hours">00</strong><small>Giờ</small></div>
+              <div class="timebox"><strong id="minutes">00</strong><small>Phút</small></div>
+              <div class="timebox"><strong id="seconds">00</strong><small>Giây</small></div>
             </div>
             <form class="form" id="leadForm" novalidate>
-              <input
-                type="text"
-                name="hoTen"
-                placeholder="Họ và tên"
-                required
-              />
+              <input type="text" name="hoTen" placeholder="Họ và tên" required />
               <input
                 type="tel"
                 name="soDienThoai"
@@ -1562,27 +2799,10 @@
                 <option>Bảo trì/sửa chữa</option>
                 <option>Muốn nhận báo giá</option>
               </select>
-              <textarea
-                name="ghiChu"
-                placeholder="Mô tả ngắn: số tầng, diện tích, khu vực công trình..."
-              ></textarea>
-              <input
-                type="hidden"
-                name="nguon"
-                value="Landing Page Phương Thang Máy"
-              />
-              <button type="submit" class="btn btn-primary" id="submitButton">
-                Đăng ký tư vấn miễn phí
-              </button>
-              <p
-                id="formStatus"
-                style="
-                  margin: 0;
-                  font-size: 14px;
-                  font-weight: 700;
-                  color: #667085;
-                "
-              ></p>
+              <textarea name="ghiChu" placeholder="Số tầng, khu vực công trình, ghi chú thêm..."></textarea>
+              <input type="hidden" name="nguon" value="Landing Page Phương Thang Máy" />
+              <button type="submit" class="btn btn-primary" id="submitButton">Đăng ký tư vấn miễn phí</button>
+              <p id="formStatus" style="margin: 0; font-size: 14px; font-weight: 700; color: #667085"></p>
             </form>
           </div>
         </div>
@@ -1591,140 +2811,23 @@
       <section id="gioi-thieu" class="section">
         <div class="container split">
           <div class="about-box">
-            <div class="tag">Giới thiệu cá nhân</div>
-            <h2>
-              Tôi là Phương — người trực tiếp tư vấn giải pháp thang máy cho
-              ngôi nhà của bạn
-            </h2>
+            <div class="tag">Giới thiệu</div>
+            <h3>Tôi là Phương — người trực tiếp tư vấn giải pháp thang máy cho ngôi nhà của bạn</h3>
             <p>
-              Phương Thang Máy tập trung vào thang máy gia đình, nhà phố, biệt
-              thự và các công trình dân dụng cần phương án lắp đặt gọn, an toàn,
-              dễ bảo trì.
-            </p>
-            <p>
-              Thay vì chỉ báo một con số, tôi giúp bạn hiểu vì sao nên chọn tải
-              trọng đó, kích thước đó, vật liệu đó và lộ trình thi công đó.
+              Phương Thang Máy tập trung vào thang máy gia đình, nhà phố và biệt thự.
+              Mục tiêu là giúp bạn hiểu rõ công trình phù hợp loại thang nào, cần chuẩn bị gì
+              và chi phí dự kiến ra sao.
             </p>
             <div class="about-stats">
-              <div class="stat">
-                <strong>1:1</strong><span>Tư vấn trực tiếp</span>
-              </div>
-              <div class="stat">
-                <strong>24h</strong><span>Phản hồi nhanh</span>
-              </div>
-              <div class="stat">
-                <strong>Rõ</strong><span>Phương án & chi phí</span>
-              </div>
+              <div class="stat"><strong>1:1</strong><span>Tư vấn trực tiếp</span></div>
+              <div class="stat"><strong>24h</strong><span>Phản hồi nhanh</span></div>
+              <div class="stat"><strong>Rõ</strong><span>Phương án & chi phí</span></div>
             </div>
           </div>
           <div class="image-box portrait-main">
-            <img
-              src="./imgaes/4.jpg"
-              alt="Ảnh chân dung Phương Thang Máy"
-              class="portrait-bg"
-            />
-            <img
-              src="./imgaes/4.jpg"
-              alt="Ảnh chân dung Phương Thang Máy"
-              class="portrait-full"
-            />
-
-            <div class="badge-card">
-              <strong>Phương Thang Máy</strong>
-              Tư vấn lắp đặt, cải tạo và bảo trì thang máy gia đình.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="video" class="video-section">
-        <div class="container">
-          <div class="section-title">
-            <div class="tag">Video thực tế</div>
-            <h2>Video giúp khách hàng hiểu rõ trước khi lắp thang máy</h2>
-            <!-- <p>
-              Thiết kế dạng card dọc trên điện thoại giống landing page mẫu: có
-              thumbnail, tiêu đề nổi bật, chân dung/người tư vấn và câu trích
-              dẫn bên dưới.
-            </p> -->
-          </div>
-
-          <div class="video-list">
-            <a
-              class="video-card"
-              href="https://youtu.be/bDWj026ONdI?si=iSE2tj_zm_MMjvbS"
-              target="_blank"
-              rel="noopener"
-            >
-              <div class="video-thumb">
-                <div class="play-button">▶</div>
-                <div class="person-box">
-                  <strong>Phương Thang Máy</strong
-                  ><span>Tư vấn giải pháp thang máy gia đình</span>
-                </div>
-              </div>
-              <div class="video-quote">
-                “Ban đầu tôi nghĩ nhà nhỏ sẽ khó làm, nhưng sau tư vấn đã có
-                phương án <span>phù hợp và tiết kiệm hơn</span>.”
-              </div>
-            </a>
-
-            <a
-              class="video-card"
-              href="https://youtu.be/bDWj026ONdI?si=iSE2tj_zm_MMjvbS"
-              target="_blank"
-              rel="noopener"
-            >
-              <div class="video-thumb">
-                <div class="play-button">▶</div>
-                <div class="person-box">
-                  <strong>Phương Thang Máy</strong
-                  ><span>Khảo sát công trình thực tế</span>
-                </div>
-              </div>
-              <div class="video-quote">
-                “Được hướng dẫn rõ kích thước hố thang, chiều sâu pit và chiều
-                cao OH nên gia đình <span>rất yên tâm</span>.”
-              </div>
-            </a>
-
-            <a
-              class="video-card"
-              href="https://youtu.be/bDWj026ONdI?si=iSE2tj_zm_MMjvbS"
-              target="_blank"
-              rel="noopener"
-            >
-              <div class="video-thumb">
-                <div class="play-button">▶</div>
-                <div class="person-box">
-                  <strong>Phương Thang Máy</strong
-                  ><span>Tư vấn tải trọng, số tầng, cabin</span>
-                </div>
-              </div>
-              <div class="video-quote">
-                “Tôi không còn mơ hồ giữa các loại thang nữa vì được giải thích
-                <span>rất dễ hiểu từng phương án</span>.”
-              </div>
-            </a>
-
-            <a
-              class="video-card"
-              href="https://youtu.be/bDWj026ONdI?si=iSE2tj_zm_MMjvbS"
-              target="_blank"
-              rel="noopener"
-            >
-              <div class="video-thumb">
-                <div class="play-button">▶</div>
-                <div class="person-box">
-                  <strong>Phương Thang Máy</strong
-                  ><span>Hướng dẫn sử dụng & bảo trì</span>
-                </div>
-              </div>
-              <div class="video-quote">
-                “Có lịch bảo trì rõ ràng nên sau khi lắp xong gia đình dùng
-                <span>an tâm hơn nhiều</span>.”
-              </div>
-            </a>
+            <img src="./imgaes/4.jpg" alt="Ảnh chân dung Phương Thang Máy" class="portrait-bg" />
+            <img src="./imgaes/4.jpg" alt="Ảnh chân dung Phương Thang Máy" class="portrait-full" />
+            <div class="badge-card"><strong>Phương Thang Máy</strong>Tư vấn lắp đặt, cải tạo và bảo trì thang máy gia đình.</div>
           </div>
         </div>
       </section>
@@ -1732,37 +2835,30 @@
       <section id="van-de" class="section section-light">
         <div class="container">
           <div class="section-title">
-            <div class="tag">Bạn đang gặp vấn đề?</div>
-            <h2>Lắp thang máy không chỉ là chọn một thiết bị</h2>
-            <p>
-              Nếu chọn sai ngay từ đầu, gia chủ dễ phát sinh chi phí, vướng kỹ
-              thuật hố thang hoặc dùng không đúng nhu cầu thực tế.
-            </p>
+            <div class="tag">Vấn đề thường gặp</div>
+            <h2>Gia chủ thường băn khoăn điều gì?</h2>
+            <p>Trước khi lắp thang máy, điều quan trọng nhất là hiểu đúng mặt bằng, nhu cầu và ngân sách.</p>
           </div>
-          <div class="grid-3">
+          <div class="grid-3 concern-grid">
             <div class="card">
               <div class="icon">📐</div>
-              <h3>Không biết kích thước hố thang</h3>
-              <p>
-                Nhà đã xây hoặc đang thiết kế cần tính kỹ diện tích, chiều sâu
-                pit, chiều cao OH và vị trí đặt máy.
-              </p>
+              <h3>Kích thước hố thang</h3>
+              <p>Chưa rõ diện tích, chiều sâu pit, chiều cao OH và vị trí đặt thang.</p>
             </div>
             <div class="card">
               <div class="icon">💸</div>
-              <h3>Sợ báo giá không rõ ràng</h3>
-              <p>
-                Mỗi cấu hình có mức giá khác nhau. Bạn cần bảng tư vấn minh bạch
-                theo tải trọng, số điểm dừng và vật liệu cabin.
-              </p>
+              <h3>Chi phí đầu tư</h3>
+              <p>Muốn biết khoảng giá theo tải trọng, số tầng và vật liệu cabin.</p>
             </div>
             <div class="card">
               <div class="icon">🛠️</div>
-              <h3>Lo bảo trì sau lắp đặt</h3>
-              <p>
-                Thang máy cần vận hành ổn định lâu dài, có lịch bảo trì, kiểm
-                tra an toàn và hỗ trợ khi có sự cố.
-              </p>
+              <h3>Bảo trì sau lắp đặt</h3>
+              <p>Cần đơn vị hướng dẫn vận hành, kiểm tra an toàn và hỗ trợ lâu dài.</p>
+            </div>
+            <div class="card">
+              <div class="icon">🏠</div>
+              <h3>Nhà đã hoàn thiện</h3>
+              <p>Không biết có cải tạo được không, đặt thang ở đâu cho hợp lý.</p>
             </div>
           </div>
         </div>
@@ -1771,49 +2867,34 @@
       <section id="giai-phap" class="section">
         <div class="container split">
           <div class="image-box">
-            <div class="badge-card">
-              <strong>Giải pháp vừa vặn</strong>Tư vấn theo thực tế công trình,
-              nhu cầu sử dụng và ngân sách của gia đình.
-            </div>
+            <div class="badge-card"><strong>Giải pháp vừa vặn</strong>Tư vấn theo công trình thật, không chọn theo cảm tính.</div>
           </div>
           <div>
-            <div class="tag">Giải pháp của Phương Thang Máy</div>
-            <h2>Tư vấn chọn thang máy theo 4 tiêu chí quan trọng</h2>
+            <div class="tag">Giải pháp</div>
+            <h2>Sau buổi tư vấn, bạn sẽ rõ 4 điều chính</h2>
             <div class="steps">
               <div class="step">
                 <div>
-                  <h3>Phù hợp kết cấu nhà</h3>
-                  <p>
-                    Đánh giá diện tích, số tầng, vị trí hố thang và phương án
-                    cải tạo nếu nhà đã hoàn thiện.
-                  </p>
+                  <h3>Nhà có lắp được không?</h3>
+                  <p>Đánh giá mặt bằng, số tầng, vị trí đặt thang và phương án cải tạo nếu cần.</p>
                 </div>
               </div>
               <div class="step">
                 <div>
-                  <h3>Đúng nhu cầu sử dụng</h3>
-                  <p>
-                    Gợi ý tải trọng, tốc độ, số điểm dừng và loại cửa theo số
-                    người dùng mỗi ngày.
-                  </p>
+                  <h3>Nên chọn tải trọng nào?</h3>
+                  <p>Gợi ý tải trọng, tốc độ, số điểm dừng và loại cửa theo nhu cầu sử dụng.</p>
                 </div>
               </div>
               <div class="step">
                 <div>
-                  <h3>Tối ưu chi phí đầu tư</h3>
-                  <p>
-                    So sánh các phương án cấu hình để bạn hiểu rõ phần nào cần
-                    đầu tư, phần nào có thể tiết kiệm.
-                  </p>
+                  <h3>Chi phí khoảng bao nhiêu?</h3>
+                  <p>So sánh các cấu hình để bạn biết phần nào nên đầu tư, phần nào có thể tiết kiệm.</p>
                 </div>
               </div>
               <div class="step">
                 <div>
-                  <h3>An toàn khi vận hành</h3>
-                  <p>
-                    Tư vấn tiêu chuẩn an toàn cơ bản, lịch bảo trì và hướng dẫn
-                    sử dụng cho gia đình có trẻ nhỏ hoặc người lớn tuổi.
-                  </p>
+                  <h3>Vận hành có an toàn không?</h3>
+                  <p>Tư vấn tiêu chuẩn an toàn, hướng dẫn sử dụng và lịch bảo trì cơ bản.</p>
                 </div>
               </div>
             </div>
@@ -1821,223 +2902,254 @@
         </div>
       </section>
 
-      <section class="section section-light">
+     <section id="du-an" class="section section-light">
+  <div class="container">
+    <div class="section-title">
+      <div class="tag">Dự án & uy tín</div>
+      <h2>Một số công trình đã tư vấn</h2>
+      <p>Không chỉ nói bằng lời, Phương Thang Máy còn chứng minh bằng những công trình thực tế.</p>
+    </div>
+
+    <div class="project-stack-grid">
+
+      <div class="project-stack">
+        <div class="project-card project-trigger"
+          role="button"
+          tabindex="0"
+          data-title="Nhà phố hiện đại"
+          data-img="./imgaes/ct2.1.png"
+          data-short="Ngõ 6 - Trần Kim Xuyến · Hà Nội"
+          data-detail="Khung thép kết hợp kính cường lực.|Tối ưu diện tích giữa cầu thang bộ.|Inox gương cao cấp sang trọng.|Đèn LED hiện đại, vận hành êm ái.|Phù hợp gia đình nhiều thế hệ."
+          data-quote="Được giải thích dễ hiểu, biết rõ nhà cần chuẩn bị gì trước khi làm hố thang."
+          data-owner="Anh Tuấn · Chủ đầu tư nhà phố">
+
+          <img src="./imgaes/ct2.1.png" alt="Nhà phố hiện đại" class="project-bg" />
+          <img src="./imgaes/ct2.1.png" alt="Nhà phố hiện đại" class="project-img" />
+
+          <div class="project-content">
+            <h3>Nhà phố hiện đại</h3>
+            <p>Giải pháp tối ưu diện tích cho nhà phố nhiều tầng.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>“Được giải thích dễ hiểu, biết rõ nhà cần chuẩn bị gì trước khi làm hố thang.”</p>
+          <strong>Anh Tuấn · Chủ đầu tư nhà phố</strong>
+        </div>
+      </div>
+
+      <div class="project-stack">
+        <div class="project-card project-trigger"
+          role="button"
+          tabindex="0"
+          data-title="Biệt thự gia đình"
+          data-img="./imgaes/ct1.png"
+          data-short="Sơn Tây · Hà Nội"
+          data-detail="Cabin inox gương vàng cao cấp.|Đèn LED âm trần sang trọng.|Thiết kế hài hòa nội thất biệt thự.|Động cơ vận hành ổn định, êm ái.|Tối ưu tải trọng theo nhu cầu sử dụng."
+          data-quote="Báo giá rõ từng hạng mục, dễ so sánh giữa các phương án."
+          data-owner="Anh Hùng · Chủ đầu tư biệt thự">
+
+          <img src="./imgaes/ct1.png" alt="Biệt thự gia đình" class="project-bg" />
+          <img src="./imgaes/ct1.png" alt="Biệt thự gia đình" class="project-img" />
+
+          <div class="project-content">
+            <h3>Biệt thự gia đình</h3>
+            <p>Cabin sang trọng, hài hòa nội thất và vận hành êm.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>“Báo giá rõ từng hạng mục, dễ so sánh giữa các phương án.”</p>
+          <strong>Anh Hùng · Chủ đầu tư biệt thự</strong>
+        </div>
+      </div>
+
+      <div class="project-stack">
+        <div class="project-card project-trigger"
+          role="button"
+          tabindex="0"
+          data-title="Nhà cải tạo có thang máy"
+          data-img="./imgaes/ct3.png"
+          data-short="Thành phố Bắc Ninh"
+          data-detail="Giải pháp cho nhà đang sử dụng.|Tối ưu vị trí hố thang tiết kiệm diện tích.|Thi công an toàn, đúng tiến độ.|Cabin hiện đại, dễ phối nội thất.|Hướng dẫn sử dụng và bảo trì rõ ràng."
+          data-quote="Sau lắp đặt có hướng dẫn sử dụng và lịch bảo trì nên yên tâm hơn."
+          data-owner="Chị Lan · Khách hàng gia đình">
+
+          <img src="./imgaes/ct3.png" alt="Nhà cải tạo có thang máy" class="project-bg" />
+          <img src="./imgaes/ct3.png" alt="Nhà cải tạo có thang máy" class="project-img" />
+
+          <div class="project-content">
+            <h3>Nhà cải tạo</h3>
+            <p>Tối ưu không gian, hạn chế ảnh hưởng sinh hoạt.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>“Sau lắp đặt có hướng dẫn sử dụng và lịch bảo trì nên yên tâm hơn.”</p>
+          <strong>Chị Lan · Khách hàng gia đình</strong>
+        </div>
+      </div>
+
+      <div class="project-stack">
+        <div class="project-card project-trigger"
+          role="button"
+          tabindex="0"
+          data-title="Công trình tải khách"
+          data-img="./imgaes/ct4.png"
+          data-short="Minh Khai · Hà Nội"
+          data-detail="Thiết kế cho công trình sử dụng thường xuyên.|Tải trọng lớn, vận hành ổn định.|Hệ điều khiển thông minh hiện đại.|Cabin inox chống xước bền đẹp.|Có kế hoạch bảo trì định kỳ rõ ràng."
+          data-quote="Tư vấn rõ ràng, dễ hiểu và rất thực tế."
+          data-owner="Mr Ngọc">
+
+          <img src="./imgaes/ct4.png" alt="Công trình tải khách" class="project-bg" />
+          <img src="./imgaes/ct4.png" alt="Công trình tải khách" class="project-img" />
+
+          <div class="project-content">
+            <h3>Công trình tải khách</h3>
+            <p>Vận hành ổn định, phù hợp tần suất sử dụng cao.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>“Tư vấn rõ ràng, dễ hiểu và rất thực tế.”</p>
+          <strong>Mr Ngọc · Chủ công trình</strong>
+        </div>
+      </div>
+
+      <div class="project-stack">
+        <div class="project-card project-trigger"
+          role="button"
+          tabindex="0"
+          data-title="Thang kính nhà phố"
+          data-img="./imgaes/ct5.png"
+          data-short="Ngõ Giếng · Hà Nội"
+          data-detail="Giải pháp cho nhà phố diện tích nhỏ.|Thiết kế nhỏ gọn nhưng tiện nghi.|Cabin kính tạo cảm giác rộng hơn.|Tối ưu không gian sinh hoạt.|Vận hành ổn định, tiết kiệm điện."
+          data-quote="Được báo giá rõ ngay từ đầu nên rất yên tâm."
+          data-owner="Mr Oanh">
+
+          <img src="./imgaes/ct5.png" alt="Thang kính nhà phố" class="project-bg" />
+          <img src="./imgaes/ct5.png" alt="Thang kính nhà phố" class="project-img" />
+
+          <div class="project-content">
+            <h3>Thang kính nhà phố</h3>
+            <p>Giải pháp đẹp, thoáng và tiết kiệm diện tích.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>“Được báo giá rõ ngay từ đầu nên rất yên tâm.”</p>
+          <strong>Mr Oanh · Chủ đầu tư nhà phố</strong>
+        </div>
+      </div>
+
+      <div class="project-stack">
+        <div class="project-card project-trigger"
+          role="button"
+          tabindex="0"
+          data-title="Thang máy gia đình hiện đại"
+          data-img="./imgaes/ct8.png"
+          data-short="Hà Nội"
+          data-detail="Thiết kế phù hợp không gian nhà ở gia đình.|Cabin hiện đại, dễ kết hợp nội thất.|Tối ưu chi phí đầu tư ban đầu.|Vận hành êm ái và an toàn.|Bảo trì định kỳ rõ ràng sau bàn giao."
+          data-quote="Làm việc rõ ràng, đúng hẹn và hỗ trợ rất nhiệt tình."
+          data-owner="Khách hàng gia đình">
+
+          <img src="./imgaes/ct8.png" alt="Thang máy gia đình hiện đại" class="project-bg" />
+          <img src="./imgaes/ct8.png" alt="Thang máy gia đình hiện đại" class="project-img" />
+
+          <div class="project-content">
+            <h3>Thang máy gia đình</h3>
+            <p>Thiết kế hiện đại, phù hợp nhu cầu sử dụng hằng ngày.</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>“Làm việc rõ ràng, đúng hẹn và hỗ trợ rất nhiệt tình.”</p>
+          <strong>Khách hàng gia đình</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="project-more-btn">Xem thêm công trình</button>
+  </div>
+</section>
+
+      <section id="quy-trinh" class="section process-section">
         <div class="container">
           <div class="section-title">
-            <div class="tag">Lợi ích nhận được</div>
-            <h2>Sau buổi tư vấn, bạn sẽ nắm rõ điều gì?</h2>
+            <div class="tag">Quy trình</div>
+            <h2>4 bước đơn giản để sở hữu thang máy trong mơ</h2>
+            <p class="process-subtitle">Gọn hơn, dễ nhìn hơn và không làm trang bị dài.</p>
           </div>
-          <div class="grid-3">
-            <div class="card">
-              <div class="icon">✅</div>
-              <h3>Phương án lắp đặt sơ bộ</h3>
-              <p>
-                Biết công trình phù hợp với loại thang nào, tải trọng bao nhiêu
-                và cần chuẩn bị gì trước khi thi công.
-              </p>
+
+          <div class="process-flow" aria-label="Quy trình làm việc 4 bước">
+            <div class="process-step">
+              <div class="process-number">1</div>
+              <h3>Tư vấn & khảo sát</h3>
+              <p>Tiếp nhận yêu cầu, tư vấn giải pháp phù hợp và khảo sát thực tế.</p>
             </div>
-            <div class="card">
-              <div class="icon">📊</div>
-              <h3>Khoảng chi phí dự kiến</h3>
-              <p>
-                Có cơ sở để so sánh ngân sách giữa các phương án, tránh chọn
-                theo cảm tính.
-              </p>
+            <div class="process-step">
+              <div class="process-number">2</div>
+              <h3>Báo giá & hợp đồng</h3>
+              <p>Lập báo giá chi tiết, minh bạch và ký hợp đồng rõ ràng.</p>
             </div>
-            <div class="card">
-              <div class="icon">🤝</div>
-              <h3>Lộ trình triển khai rõ ràng</h3>
-              <p>
-                Hiểu các bước từ khảo sát, chốt bản vẽ, sản xuất/lắp đặt, kiểm
-                định đến bảo trì sau bàn giao.
-              </p>
+            <div class="process-step">
+              <div class="process-number">3</div>
+              <h3>Lắp đặt & nghiệm thu</h3>
+              <p>Thi công chuyên nghiệp, đúng tiến độ, nghiệm thu trước bàn giao.</p>
             </div>
+            <div class="process-step">
+              <div class="process-number">4</div>
+              <h3>Bảo hành & bảo trì</h3>
+              <p>Chế độ bảo hành, bảo trì định kỳ giúp thang vận hành ổn định.</p>
+            </div>
+          </div>
+
+          <div class="process-cta">
+            <h3>Sẵn sàng nâng tầm ngôi nhà của bạn?</h3>
+            <p>Liên hệ để nhận tư vấn miễn phí và báo giá tốt nhất cho dự án thang máy của bạn.</p>
+            <a class="btn btn-primary" href="#dang-ky">Nhận tư vấn miễn phí</a>
           </div>
         </div>
       </section>
 
-      <section id="du-an" class="section">
+      <section id="video" class="video-section">
         <div class="container">
           <div class="section-title">
-            <div class="tag">Dự án & uy tín</div>
-            <h2>Một số công trình đã tư vấn và phản hồi từ khách hàng</h2>
-            <p>
-              Đây là những công trình tiêu biểu trong những mà chúng tôi đã tư
-              vấn.
-            </p>
+            <div class="tag">Video chia sẻ kiến thức</div>
+            <h2>Hiểu Hơn Thang Máy Cùng Phương</h2>
           </div>
-          <div class="grid-3">
-            <div class="project-card">
-              <img
-                src="./imgaes/ct2.png"
-                alt="Nhà phố 5 tầng"
-                class="project-bg"
-              />
-              <img
-                src="./imgaes/ct2.png"
-                alt="Nhà phố 5 tầng"
-                class="project-img"
-              />
-
-              <div class="project-content">
-                <h3>Nhà phố 5 tầng</h3>
-                <p>Tư vấn phương án thang máy gia đình tiết kiệm diện tích.</p>
+          <div class="video-list" id="videoList">
+            <a class="video-card" href="https://youtu.be/0_bhabMgttM?si=m-OWbDdiNOIj-Apw" target="_blank" rel="noopener">
+              <div class="video-thumb">
+                <div class="play-button">▶</div>
+                <div class="person-box"><strong>Phương Thang Máy</strong><span>Tư vấn giải pháp thang máy gia đình</span></div>
               </div>
-            </div>
-
-            <div class="project-card">
-              <img
-                src="./imgaes/ct1.jpg"
-                alt="Biệt thự gia đình"
-                class="project-bg"
-              />
-              <img
-                src="./imgaes/ct1.jpg"
-                alt="Biệt thự gia đình"
-                class="project-img"
-              />
-
-              <div class="project-content">
-                <h3>Biệt thự gia đình</h3>
-                <p>Đề xuất cabin phù hợp nội thất và nhu cầu người lớn tuổi.</p>
+              <div class="video-quote">“Hiểu rõ vì sao chủ nhà tin tưởng và lựa chọn phương thang máy.”</div>
+            </a>
+            <a class="video-card" href="https://youtu.be/B_9zDj8tiNI?si=-mr8CP2UBzJN1tkJ" target="_blank" rel="noopener">
+              <div class="video-thumb">
+                <div class="play-button">▶</div>
+                <div class="person-box"><strong>Phương Thang Máy</strong><span>Khảo sát công trình thực tế</span></div>
               </div>
-            </div>
-
-            <div class="project-card">
-              <img
-                src="./imgaes/Ct3.png"
-                alt="Khách sạn mini"
-                class="project-bg"
-              />
-              <img
-                src="./imgaes/Ct3.png"
-                alt="Khách sạn mini"
-                class="project-img"
-              />
-
-              <div class="project-content">
-                <h3>Khách sạn mini</h3>
-                <p>Tối ưu tải trọng, số điểm dừng và lịch bảo trì định kỳ.</p>
+              <div class="video-quote">“Tư vấn dễ hiểu, giúp gia chủ chọn phương án phù hợp hơn.”</div>
+            </a>
+            <a class="video-card" href="https://youtu.be/bDWj026ONdI?si=iSE2tj_zm_MMjvbS" target="_blank" rel="noopener">
+              <div class="video-thumb">
+                <div class="play-button">▶</div>
+                <div class="person-box"><strong>Phương Thang Máy</strong><span>Chọn tải trọng, cabin, số điểm dừng</span></div>
               </div>
-            </div>
+              <div class="video-quote">“Tất cả quy trình đều được thực hiện một cách chuyên nghiệp và minh bạch.”</div>
+            </a>
+            <a class="video-card" href="https://youtu.be/bDWj026ONdI?si=iSE2tj_zm_MMjvbS" target="_blank" rel="noopener">
+              <div class="video-thumb">
+                <div class="play-button">▶</div>
+                <div class="person-box"><strong>Phương Thang Máy</strong><span>Hướng dẫn sử dụng & bảo trì</span></div>
+              </div>
+              <div class="video-quote">“Hiểu đúng về giá trị của 1 chiếc thang máy.”</div>
+            </a>
           </div>
-          <div style="height: 28px"></div>
-          <div class="grid-3">
-            <div class="testimonial">
-              <p>
-                “Được giải thích rất dễ hiểu, biết rõ nhà mình cần chuẩn bị gì
-                trước khi làm hố thang.”
-              </p>
-              <strong>MR.Tuấn - Chủ đầu tư nhà phố</strong>
-            </div>
-            <div class="testimonial">
-              <p>“Báo giá rõ từng hạng mục, dễ so sánh giữa các phương án.”</p>
-              <strong>MR.Hùng - Chủ đầu tư biệt thự</strong>
-            </div>
-            <div class="testimonial">
-              <p>
-                “Sau lắp đặt có hướng dẫn sử dụng và lịch bảo trì nên gia đình
-                yên tâm hơn.”
-              </p>
-              <strong>MR.Tuấn - Chủ đầu tư gia đình</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <div class="section-title">
-            <div class="tag">Cam kết tư vấn</div>
-            <h2>
-              Không ép mua — tập trung giúp bạn hiểu đúng trước khi quyết định
-            </h2>
-          </div>
-          <div class="grid-3">
-            <div class="card">
-              <div class="icon">🔍</div>
-              <h3>Khảo sát theo thực tế</h3>
-              <p>
-                Tư vấn dựa trên mặt bằng, số tầng, nhu cầu dùng và ngân sách của
-                gia đình.
-              </p>
-            </div>
-            <div class="card">
-              <div class="icon">🧾</div>
-              <h3>Báo giá minh bạch</h3>
-              <p>
-                Giải thích rõ cấu hình, vật liệu, hạng mục chính và các khoản có
-                thể phát sinh.
-              </p>
-            </div>
-            <div class="card">
-              <div class="icon">🛡️</div>
-              <h3>Đồng hành sau bàn giao</h3>
-              <p>
-                Có định hướng bảo trì, kiểm tra an toàn và hỗ trợ kỹ thuật khi
-                cần.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="quy-trinh" class="section">
-        <div class="container">
-          <div class="section-title">
-            <div class="tag">Quy trình làm việc</div>
-            <h2>6 bước để có phương án thang máy phù hợp</h2>
-          </div>
-          <div class="grid-3">
-            <div class="card">
-              <div class="icon">1</div>
-              <h3>Đăng ký thông tin</h3>
-              <p>
-                Để lại số điện thoại, loại công trình và nhu cầu lắp đặt hoặc
-                bảo trì.
-              </p>
-            </div>
-            <div class="card">
-              <div class="icon">2</div>
-              <h3>Tư vấn sơ bộ</h3>
-              <p>
-                Trao đổi qua điện thoại/Zalo để xác định số tầng, diện tích và
-                ngân sách dự kiến.
-              </p>
-            </div>
-            <div class="card">
-              <div class="icon">3</div>
-              <h3>Khảo sát công trình</h3>
-              <p>
-                Kiểm tra thực tế hố thang, mặt bằng và các điều kiện kỹ thuật
-                liên quan.
-              </p>
-            </div>
-            <div class="card">
-              <div class="icon">4</div>
-              <h3>Gửi phương án & báo giá</h3>
-              <p>
-                Đề xuất cấu hình, vật liệu, tiến độ và chi phí theo nhu cầu của
-                bạn.
-              </p>
-            </div>
-            <div class="card">
-              <div class="icon">5</div>
-              <h3>Lắp đặt & bàn giao</h3>
-              <p>
-                Thi công theo kế hoạch, hướng dẫn vận hành và kiểm tra an toàn
-                trước khi sử dụng.
-              </p>
-            </div>
-            <div class="card">
-              <div class="icon">6</div>
-              <h3>Bảo trì định kỳ</h3>
-              <p>
-                Nhắc lịch bảo trì, kiểm tra thiết bị và hỗ trợ khi thang cần xử
-                lý kỹ thuật.
-              </p>
-            </div>
-          </div>
+          <button type="button" class="video-more-btn" id="videoMoreBtn">Xem thêm video</button>
         </div>
       </section>
 
@@ -2045,11 +3157,8 @@
         <div class="container">
           <div class="cta-band">
             <div>
-              <h2>Bạn muốn biết nhà mình có lắp được thang máy không?</h2>
-              <p>
-                Gửi thông tin công trình để Phương Thang Máy tư vấn phương án
-                phù hợp trước khi bạn quyết định đầu tư.
-              </p>
+              <h2>Bạn đang muốn lắp thang máy - nhưng chưa tìm được đơn vị uy tín?</h2>
+              <p>Gửi thông tin công trình để nhận tư vấn sơ bộ miễn phí.</p>
             </div>
             <a class="btn btn-primary" href="#dang-ky">Nhận tư vấn miễn phí</a>
           </div>
@@ -2060,45 +3169,46 @@
         <div class="container">
           <div class="section-title">
             <div class="tag">Câu hỏi thường gặp</div>
-            <h2>Những điều khách hàng hay hỏi trước khi lắp thang máy</h2>
+            <h2>Khách hàng thường hỏi gì?</h2>
           </div>
           <div class="faq">
             <details>
               <summary>Nhà đang xây dở có tư vấn được không?</summary>
-              <p>
-                Có. Bạn nên tư vấn càng sớm càng tốt để chốt kích thước hố
-                thang, vị trí đặt thang và phương án kỹ thuật phù hợp.
-              </p>
+              <p>Có. Tư vấn càng sớm càng dễ chốt kích thước hố thang và phương án kỹ thuật.</p>
             </details>
             <details>
-              <summary>
-                Nhà đã hoàn thiện rồi có lắp được thang máy không?
-              </summary>
-              <p>
-                Nhiều công trình vẫn có thể lắp được, nhưng cần khảo sát kỹ mặt
-                bằng, kết cấu và phương án cải tạo.
-              </p>
+              <summary>Nhà đã hoàn thiện rồi có lắp được thang máy không?</summary>
+              <p>Nhiều công trình vẫn có thể lắp, nhưng cần khảo sát mặt bằng và kết cấu thực tế.</p>
             </details>
             <details>
               <summary>Tôi chưa biết ngân sách, có được tư vấn không?</summary>
-              <p>
-                Có. Buổi tư vấn sẽ giúp bạn hiểu các nhóm chi phí chính để chọn
-                phương án phù hợp hơn.
-              </p>
-            </details>
-            <details>
-              <summary>
-                Tôi chưa có bản vẽ thang máy có thể tư vấn cho tôi không ?
-              </summary>
-              <p>
-                Có. Bạn có thể gửi mặt bằng, số tầng và nhu cầu sử dụng để được
-                tư vấn sơ bộ trước khi có bản vẽ chi tiết.
-              </p>
+              <p>Có. Buổi tư vấn giúp bạn hiểu các nhóm chi phí chính để chọn phương án phù hợp.</p>
             </details>
           </div>
         </div>
       </section>
+
     </main>
+
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close-project-modal></div>
+      <div class="project-modal-card" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <button type="button" class="project-modal-close" data-close-project-modal aria-label="Đóng">×</button>
+        <img id="projectModalImg" src="" alt="" />
+        <div class="project-modal-body">
+          <div class="tag">Thông tin công trình</div>
+          <h2 id="projectModalTitle"></h2>
+          <p id="projectModalShort"></p>
+          <p id="projectModalDetail"></p>
+          <div class="project-modal-quote">
+            <p id="projectModalQuote"></p>
+            <strong id="projectModalOwner"></strong>
+          </div>
+          <a class="btn btn-primary" href="#dang-ky" data-close-project-modal>Muốn tư vấn công trình tương tự</a>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="container">
@@ -2107,9 +3217,19 @@
       </div>
     </footer>
 
-    <div class="floating-cta">
-      <a href="tel:0963087385">Gọi ngay</a>
-      <a href="#dang-ky">Đăng ký</a>
+    <div class="floating-cta" aria-label="Liên hệ nhanh">
+      <a class="call-btn" href="tel:0963087385" aria-label="Gọi ngay Phương Thang Máy">
+        <span class="call-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.3-.3.74-.4 1.13-.27 1.24.41 2.57.63 3.96.63.61 0 1.1.49 1.1 1.1v3.49c0 .61-.49 1.1-1.1 1.1C10.83 21.73 2.27 13.17 2.27 2.5c0-.61.49-1.1 1.1-1.1h3.5c.61 0 1.1.49 1.1 1.1 0 1.39.22 2.72.63 3.96.12.39.03.82-.28 1.13l-1.7 3.2Z"/>
+          </svg>
+        </span>
+        <span>Gọi ngay</span>
+      </a>
+      <a class="register-btn" href="#dang-ky">
+        <span class="register-icon" aria-hidden="true">✍</span>
+        <span>Đăng ký</span>
+      </a>
     </div>
 
     <script>
@@ -2292,6 +3412,127 @@ document
       submitButton.textContent = "Đăng ký tư vấn miễn phí";
     }
   });
+
+      function initProjectModal() {
+        const modal = document.getElementById("projectModal");
+        if (!modal) return;
+
+        const img = document.getElementById("projectModalImg");
+        const title = document.getElementById("projectModalTitle");
+        const shortText = document.getElementById("projectModalShort");
+        const detail = document.getElementById("projectModalDetail");
+        const quote = document.getElementById("projectModalQuote");
+        const owner = document.getElementById("projectModalOwner");
+
+        function openModal(trigger) {
+          img.src = trigger.dataset.img || "";
+          img.alt = trigger.dataset.title || "Công trình thang máy";
+          title.textContent = trigger.dataset.title || "Công trình thang máy";
+          shortText.textContent = trigger.dataset.short || "";
+         const detailItems = (trigger.dataset.detail || "")
+  .split("|")
+  .map(item => item.trim())
+  .filter(Boolean);
+
+detail.innerHTML = detailItems.length
+  ? `<ul class="project-detail-list">${detailItems.map(item => `<li>${item}</li>`).join("")}</ul>`
+  : "";
+          quote.textContent = trigger.dataset.quote || "";
+          owner.textContent = trigger.dataset.owner || "";
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+
+        document.querySelectorAll(".project-trigger").forEach(function (trigger) {
+          trigger.addEventListener("click", function () {
+            openModal(trigger);
+          });
+          trigger.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openModal(trigger);
+            }
+          });
+        });
+
+        document.querySelectorAll("[data-close-project-modal]").forEach(function (closeButton) {
+          closeButton.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+        });
+      }
+
+      function initVideoMoreButton() {
+        const videoList = document.getElementById("videoList");
+        const button = document.getElementById("videoMoreBtn");
+        if (!videoList || !button) return;
+
+        button.addEventListener("click", function () {
+          const expanded = videoList.classList.toggle("is-expanded");
+          button.textContent = expanded ? "Thu gọn video" : "Xem thêm video";
+        });
+      }
+function initHeroDesktopDrag() {
+  const track = document.querySelector(".hero-slider-track");
+  if (!track) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  let moved = false;
+
+  track.addEventListener("mousedown", function (e) {
+    isDown = true;
+    moved = false;
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+    track.style.cursor = "grabbing";
+  });
+
+  track.addEventListener("mouseleave", function () {
+    isDown = false;
+    track.style.cursor = "";
+  });
+
+  track.addEventListener("mouseup", function () {
+    isDown = false;
+    track.style.cursor = "";
+  });
+
+  track.addEventListener("mousemove", function (e) {
+    if (!isDown) return;
+    e.preventDefault();
+
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+
+    if (Math.abs(walk) > 6) moved = true;
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+  document.querySelectorAll(".hero-slide").forEach(function (slide) {
+    slide.addEventListener("click", function (e) {
+      if (moved) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+    }, true);
+  });
+}
+
+initHeroDesktopDrag();
+      initProjectModal();
+      initVideoMoreButton();
+
     </script>
   </body>
 </html>
