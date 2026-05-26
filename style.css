@@ -543,7 +543,7 @@
         color: var(--secondary);
         text-shadow: 0 10px 28px rgba(246, 183, 60, 0.22);
       }
-
+   
       .hero-lead {
         max-width: 860px !important;
         margin: 0 auto 26px !important;
