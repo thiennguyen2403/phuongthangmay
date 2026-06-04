@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-      const deadline = new Date();
+     const deadline = new Date("2026-06-07T23:59:59+07:00");
+     console.log(deadline);
       deadline.setDate(deadline.getDate() + 3);
 
       function pad(num) {

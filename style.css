@@ -542,6 +542,7 @@
       .hero-title .hero-highlight {
         color: var(--secondary);
         text-shadow: 0 10px 28px rgba(246, 183, 60, 0.22);
+         white-space: nowrap;
       }
    
       .hero-lead {
@@ -1859,7 +1860,7 @@
         }
 
         .hero-title {
-          font-size: clamp(32px, 10vw, 44px) !important;
+          font-size: clamp(32px, 8.5vw, 44px) !important;
           line-height: 1.08;
           letter-spacing: -0.7px;
           text-align: left;
@@ -3502,7 +3503,7 @@
         }
 
         .hero-title {
-          font-size: clamp(31px, 9.5vw, 42px) !important;
+          font-size: clamp(31px, 8.5vw, 42px) !important;
           line-height: 1.08;
           letter-spacing: -0.7px;
           margin-bottom: 12px;
